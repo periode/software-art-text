@@ -12,4 +12,4 @@ Although computers only appeared a few decades ago, automation, repetition and p
 
 Software Art: Text is an introduction to the history, theory and practice of computer-aided artistic endeavours in the field of prose and poetry. This class will be focused on the appearance and role of computers as a new way for artists to write and read both programming and natural languages. While elaborating and discussing concepts and paradigms specific to computing platforms, such as recomposition, stochastic writing, found material and interaction, students will be encouraged to explore their own artistic practice through the exclusive use of their computers, by writing their own programs.
 
-Software Art: Text is a complement to Software Art: Image, a 7-week course on the use of software from the perspective of the visual arts.
+Software Art: Text is a complement to [Software Art: Image](https://github.com/pierredepaz/software-art-image), a 7-week course on the use of software from the perspective of the visual arts.
