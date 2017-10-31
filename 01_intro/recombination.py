@@ -11,7 +11,7 @@ victim = ['shadow', 'shiver', 'glimpse', 'crawl', 'sinner', 'saviour', 'hand', '
 while True:
     print "the %s %s %s the %s." % (random.choice(actor_adjectives), random.choice(actor), random.choice(act), random.choice(victim_adjectives)),
     conclusion = random.random()
-    if conclusion > 0.9:
+    if conclusion > 0.8:
         print "there is a %s." % random.choice(victim)
         exit()
     elif conclusion > 0.6:
