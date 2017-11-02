@@ -4,7 +4,7 @@ names=["Mei","She","He","It"]
 place=["maze", "river","sky", "ocean","castle","physics class"]
 verb=["play", "sleep", "drink", "sing","tear","throw", "swallow"]
 thing=["poem", "dream", "xiao long bao", "langrande equation","cloud","python"]
-
+#added a comment here
 while 1:
     conclusion=random.random()
     
