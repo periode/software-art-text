@@ -1,0 +1,81 @@
+/* Stylesheet for menu system */
+
+.menu{
+	/*position: absolute;*/
+	/*float: left;*/
+	width: 180px; /*width of menu minus border*/
+	/*border: 1px solid #000C64;*/
+	margin-bottom: 10px;
+	/*top: 288px;	/* sets position of menu from top of containing layer */
+}
+	
+.menu div a{ 	/* header bar links */
+	font: bold 12px Arial, Helvetica, sans-serif;
+	display: block;
+	background: url(/images/menu_bkgrnd.png);
+	height: 24px; /* subtract padding from img height (ie: 32px - 4px - 4px)*/
+	padding: 4px 0px 4px 10px;
+	line-height: 24px;
+	text-decoration: none;
+}
+	
+.menu div a:link, .menu div a:visited{
+	color: #FFFFFF;
+}
+
+.menu div a:hover{
+	background-position: 100% -32px;
+	line-height: 24px;
+	color: #000000;
+	padding: 4px 0px 4px 10px;	/* added for IE 6 */
+}
+
+.menu div.unselected a{ /*header not currently selected*/
+	color: #FFFFFF;
+}
+
+.menu div a:hover { /* header with sub-menu items */
+	color: #000000;
+}
+	
+.menu div.selected a{ /*header currently selected (with sub-menu open) */
+	color: #000000;
+	background-position: 100% -32px !important;
+}
+
+.menu ul{
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+/* sub-menu list items (<li>) */
+
+.menu ul li{
+	border-bottom: 1px solid #2e5f97;
+}
+
+.menu ul li a{ /*sub menu links*/
+	display: block;
+	line-height: 14px;
+	font-weight: bold;
+	font-size: 11px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	color: #111111;
+	padding-top: 8px;
+	padding-right: 0px;
+	padding-left: 10px;
+	padding-bottom: 8px;
+	background: #FFFFFF;
+}
+
+.menu ul li a:hover{
+	background-color: #FFF9A5;    /* was #FFF9A0 #FFF9A9 */
+	color: #111111;	/* added for IE 6 */
+	padding-top: 8px;
+	padding-right: 0px;
+	padding-left: 10px;
+	padding-bottom: 8px;	/* added for IE 6 */
+}
+

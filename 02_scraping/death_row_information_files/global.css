@@ -1,0 +1,428 @@
+@charset "utf-8";
+/*
+FILE: Site-wide CSS with media queries for HTML5 template.
+ALERTS: Alert notices are located in two places: one for screens < 768px and, another for screens >= 768px.
+		Turn them ON/OFF together thru CSS 'display' attributes at:
+			1) #alert_top
+			2) #alert_tab
+		Don't forget to do the same in global_ie.css!
+NOTE  : Target size for full display is 1024px width. However, since vertical scroll bars on desktop browsers occupy 17px,
+		that leaves a usable width of 1007px (1024 - 17). But due to 8px padding, content width is reduced further
+		to 991px (1007 - 16). Scroll bars on mobile devices are overlaid and do not occupy space.
+BY: Frank Henderson, TDCJ Web Services
+DATE: 12/19/16
+UPDATED: 09/01/17
+*/
+
+body  {
+	margin: 0px;
+	padding: 0px;
+	background-color: #002859;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4  {
+	margin: 0px;
+	color: #333333;
+}
+
+h1  {
+    font-size: 24px;
+    line-height: 25px;
+    margin-left: 10px;
+    margin-top: -3px;   /*added by Wendy */
+    margin-bottom: 15px;
+}
+
+h2  {
+    border-bottom: 1px solid #2e5f97;
+    font-size: 18px;
+    padding-left: 10px;
+    padding-bottom: 8px;
+    margin-bottom: 13px;
+    padding-top: 13px;
+
+/*    font-size: 18px;
+    display: block;
+    background-color: #2e5f97;
+    color: #FFFFFF;
+    padding: 3px;
+    padding-left: 10px;
+    margin-bottom: 19px;   */
+}
+
+h3  {
+    font-size: 16px;
+    line-height: 20px;
+    padding-left: 10px;
+    padding-bottom: 4px;
+}
+
+h4  {
+    font-size: 14px;
+    padding-left: 10px;
+    /*padding-bottom: 13px;*/
+}
+
+p  {
+    line-height: 18px;
+    font-size: 14px;
+    margin-bottom: 18px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.italic  {
+    font-style: italic;
+}
+
+img {	/* images flex based on screen size */
+    max-width:100%;
+    height: auto;
+}
+
+video {	/* video flexs based on screen size */
+    width: 100%;
+    height: auto;
+}
+
+hr  {
+     display: block;
+     height: 1px;
+     border: 0;
+     border-top: 1px solid #2e5f97;
+     margin: 1em 0;
+     padding: 0;
+}
+
+ul.star  {
+	list-style-image: url(/images/star_bullet.gif);	
+	font-size: 14px;
+}
+
+/* for HTML5 backwards compatibility  */
+header, footer, aside, section, article, nav, hgroup  {
+	display: block;
+}
+
+/* hyperlinks for header */
+header a:link, header a:visited, header a:focus, header a:active {	color: #FFFFFF;	text-decoration: none; }
+header a:hover { color: #FFFFFF; text-decoration: underline; }
+/* hyperlinks for footer */
+footer a:link, footer a:visited, footer a:focus, footer a:active {	color: #FFFFFF;	text-decoration: none; }
+footer a:hover { color: #FFFFFF; text-decoration: underline; }
+/* hyperlinks all other */
+a:link, a:visited, a:focus, a:active { color: #2e5f97; text-decoration: underline; }
+a:hover { color: #2e5f97; text-decoration: none; }
+
+/*
+=====================================================
+TOP HEADER BANNERS
+=====================================================
+*/
+
+/* alert banner ***************************************/
+
+#alert_top	{
+	display: block;		/* ON: block, OFF: none */
+	width: 100%;
+	height: 17px;
+	background-color: #FF0000;
+	padding-top: 2px;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 14px;
+}
+
+/* social media banner **********************************/
+
+#social_top	{
+	display: block;
+	width: 100%;
+	height: 31px;
+	background-color: #cacbc3;
+	padding-top: 1px;
+	text-align: right;
+}
+
+/* blue & grey top banner *********************************/
+
+#top_banner  {
+	width: 100%;
+	height: 41px;
+	background-image: url(/images/top_banner_bkgrnd.jpg);
+	background-repeat: repeat;
+	color: #FFFFFF;
+}
+
+#alert_tab {
+	display: none;		/* appears at 768px, do not turn ON/OFF here (must remain 'none') */
+}
+
+#top_nav  {
+	float: right;
+	width: 318px;
+}
+#social_media	{
+	display: none;		/* appears at 640px */
+}
+.social_img_space	{
+	padding-right: 6px;
+}
+
+#top_menu  {
+	height: 31px;
+	padding-top: 10px;
+	padding-right: 4px;
+	font-size: 12px;	/* .8em = 12px */
+	text-align: right;
+	line-height: 12px;
+}
+
+#google_translate_element	{
+	float:right;
+	padding-top:3px; 
+	margin-right: 3px;
+}
+
+/* seal & title banner, mission statement *************/
+
+#title_banner  {
+	width: 100%;
+	height: 96px;
+	background-color: #002859;
+}
+
+#title_main  {
+	float: left;
+	width: 320px;
+	height: 96px;
+	background-image: url(/images/title_small.png);
+}
+
+#mission  {
+	display: none;		/* appears at 640px */
+}
+
+/*
+=====================================================
+SKIP TO MAIN CONTENT
+=====================================================
+*/
+  .skip {
+        position: absolute;
+        top: -1000px;
+        left: -1000px;
+        height: 1px;
+        width: 1px;
+        text-align: left;
+        overflow: hidden;
+    }
+    
+    a.skip:active, 
+    a.skip:focus, 
+    a.skip:hover {
+        left: 0; 
+        top: 0;
+        width: auto; 
+        height: auto; 
+        overflow: visible; 
+    }
+
+/*
+=====================================================
+BODY & CONTENT
+=====================================================
+*/
+
+#body  {
+	width: 100%;
+	background-color: #FFFFFF;
+}
+
+/* site search  *************************************/
+
+#search {	
+	width: 100%;
+	height: 41px;
+	background-color: #92b1cd;
+}
+#search form	{
+	text-align: center;
+	width: 285px;
+	height: 25px;
+	padding-top: 10px;
+	margin-right: auto;
+	margin-left: auto;
+}
+#search_input {
+	width:180px;
+	height:20px;
+	border: 0px;	/* borders disrupt alignment with button (cross-browser) */
+	padding:0px 5px 0px 5px;
+	color:#333333;
+	line-height:20px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:14px;
+	font-style: italic;
+	background-color:#FFFFFF;
+}
+#search_button {
+	width:50px;
+	height:20px;
+	border:0;
+	margin:0;
+	padding:0;
+	background-image:url(../images/search_button.png);
+	text-indent:-1000px;
+	line-height:20px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:14px;
+}
+
+/* page content ***********************************/
+
+#content  {
+	padding: 8px;
+	font-size: 14px;
+	line-height: 17px;
+	color: #333333;
+}
+
+/*
+=====================================================
+FOOTER BANNERS
+=====================================================
+*/
+
+#footer_upper  {
+	background-color: #2e5f97;
+	display: block;
+	font-size: 12px;
+	color: #FFFFFF;
+	padding: 5px;
+	text-align: center;
+}
+
+#footer_lower  {
+	background-color: #cacac8;
+	display: block;
+	font-size: 12px;
+    font-weight: bold;
+	color: #000000;
+	padding: 5px;
+	text-align: center;
+}
+
+/*
+=====================================================
+PROGRESSIVELY ENHANCED STYLES
+=====================================================
+*/
+
+@media screen and (min-width: 480px) {
+
+#title_main  {
+	background-image: url(/images/title_medium.png);
+	width: 389px;
+	margin-left: 10px;
+}
+
+#search form  {
+	width: 330px;
+}
+#search_input {
+	width: 270px;
+}
+
+}
+
+@media screen and (min-width: 640px)  {
+
+#social_top	{
+	display: none;	
+}
+
+#top_nav  {
+	width: 485px;
+}
+#social_media	{
+	display: block;
+	float: left;
+	padding-top: 1px;
+}
+
+#mission  {
+	display: block;
+	float: right;
+	width: 213px;
+	height: 96px;
+	margin-right: 10px;
+	background-image: url(/images/mission.png);
+}
+
+}
+
+@media screen and (min-width: 768px)  {
+
+#alert_top  {
+	display: none;	/* do not turn ON/OFF here (must remain 'none')*/
+}
+
+#alert_tab  {
+    display: block;		/* ON: block, OFF: none */
+    width: 35%;
+    float: left;
+    height: 25px;
+    background-color: #FF0000;
+    padding-top: 7px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#top_menu  {
+	padding-right: 10px;
+	padding-top: 9px;
+	font-size: 13px;
+	line-height: 13px;
+}
+
+}
+
+@media screen and (min-width: 1024px)  {
+
+.container  {		/* limits all content to 1007px width (see NOTE at top) */
+	width: 1007px;	/* due to 8px padding, resulting #content width is 991px (1007 - 16) */
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#title_main  {
+	background-image: url(/images/title_large.png);
+	width: 738px;
+}
+
+#content  {
+	width: 991px;	/* due to 8px padding, #content must be 1007 - 16 */
+}
+
+.footer_container  {
+	width: 1002px;	/* due to 5px padding, use separate container class for footer (1007 - 5) */
+	margin-right: auto;
+	margin-left: auto;
+}
+
+}
+
+@media print  {
+
+body  {
+	background-color: #FFFFFF;	
+}
+
+#top_banner, #alert_top, #social_top, #alert_tab, #google_translate_element, #search, #footer_upper {
+	display: none;	
+}
+
+}
