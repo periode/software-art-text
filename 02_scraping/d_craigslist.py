@@ -2,7 +2,7 @@ import requests                                                                 
 import bs4                                                                                  #this we need for making sense of the html page
 import json                                                                                 #this we need to save our data as JSON
 
-all_postings = []                                                                           #here we will temporarily store all the postings we find
+all_postings = ['hello', 'wont', 'you', 'tell', 'me']                                                                           #here we will temporarily store all the postings we find
 currently_scraping_count = 0                                                                #we keep track of which posting we're currently scraping
 
 #################################### THIS IS THE REQUEST PART
@@ -33,6 +33,9 @@ for result in all_results:
 print "done scraping! writing to file..."
 
 #################################### THIS IS THE WRITING PART
-with open("all_results.json", 'w') as my_file:                                              #this is how you open a file. the 'w' means we are going to write to it.
-    data_to_write = json.dumps(all_postings)                                                #because we have an array, we need to turn it into a string before writing
-    my_file.write(data_to_write)                                                            #and finally we write!
+with open("all_results_2.json", 'w') as my_file:                                              #this is how you open a file. the 'w' means we are going to write to it.
+   data_to_write = json.dumps(all_postings)                                                #because we have an array, we need to turn it into a string before writing
+   my_file.write(data_to_write)                                                            #and finally we write!
+
+# with open("new_results.json", 'w') as my_file:
+#     my_file.write(all_postings)
