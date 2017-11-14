@@ -1,0 +1,102 @@
+Posted: 20 May
+Early Access Review
+Now i can dissapoint my family even more by having moving anime tiddies on my screen
+Posted: 14 December, 2016
+Product received for free
+Early Access Review
+I set a pornographic movie for my wallpaper 10/10
+Posted: 4 June
+Early Access Review
+Finally a good reason to clean up a desktop :]
+Posted: 11 February
+Early Access Review
+you know you've hit a new low when you have masutrbaited to your wallpapers
+Posted: 1 February
+Early Access Review
+You Will Always Win In A Game of:Who has the Better Desktop Background
+Posted: 23 March
+Early Access Review
+Now i can disappoint my family even more by having moving anime tiddies on my screen
+Posted: 17 June
+Early Access Review
+What you can find in Workshop:18+ SkyrimMMD Miku/etc
+AnimeOverwatchWoW
+Posted: 2 September
+Early Access Review
+My girlfriend apologised me for checking weird websites
+ She thought she downloaded some kind of virus because there was that Gandalf playing sax on the desktop and she couldn't stop it
+Posted: 11 March
+Early Access Review
+I have always hesitated to use live wallpaper applications since they used to be very performance-draining
+ When researching for perfomance-tests of "Wallpaper Engine" I didn't quite find a review that was useful for me so i decided to get the software and test it myself
+ It should be noted that this review will ignore other apsects such as the content of the software
+Hardware Specs: CPU
+i5 6400 (no overclock with BCLK)CPU cooler
+AIO watercooling loop from NZXTGPU
+GTX 980TI (MSI - no manual overclock)RAM
+16GB DDR4 (GSkill - 2133MHz - dual kit)Motherboard
+ASUS ROG Maximus VIII RangerSSD
+Samsung 850 Evo (Only for OS, Steam and apps on HDD)OS
+Windows 10 ProfessionalTest: The software (run in non 64-bit mode) will be tested in two scenarios
+ Arsenal wallpaper will be used for all tests
+1) Hardware usage will be observed while the System sits idle for 10 minutes without any other applications running in the background
+ The tool for HW monitoring is "OpenHardwareMonitor"
+ This testing scenario will be repeated for the wallpaper presets Low, Medium and High and a standard windows desktop background as reference
+ CPU temperature
+CPU load
+GPU temperature
+GPU load
+GPU memory usage
+Preset None Low Medium High
+CPUTempAvg 21°C 20°C 20°C 20°C
+CPUTempMin 18°C 18°C 18°C 18°C
+CPUTempMax 25°C 22°C 22°C 23°C
+CPULoadAvg 1% 3% 3% 3%
+CPULoadMin 0
+4% 0
+4% 0
+1% 0
+4%
+CPULoadMax 24% 10% 24% 24%
+GPULoadAvg 0
+1% 7% 10% 15%
+GPULoadMin 0
+1% 1% 1% 2%
+GPULoadMax 5% 11% 16% 21%
+GPUTempAvg 35°C 36°C 37°C 37°C
+GPUTempMin 34°C 35°C 36°C 36°C
+GPUTempMax 36°C 37°C 38°C 38°C
+GPUMemoryUse 180MB 185MB 230MB 260MB Furthermore the RAM usage has been tested, but did not show measureable differences
+Ram usage was always at about 2
+2GB
+2) This test will show the impact on gaming performance
+ Again, Arsenal wallpaper is used, this time on preset High
+ As there are different options to choose, which define how the wallpaper will react to an application being run in fullscreen (Keep Running, Stop, Pause) a benchmark will be done for every mode and as reference with a standard windows desktop background
+I chose the Benchmark Scene from Rainbow Six Siege with the graphics on ultra preset
+ Here are the results: FPS in RB6-Benchmark
+RB6S MinFPS AvgFPS MaxFPS
+None 102 173 327
+Stop 93 172 264
+Pause 100 172 296
+Keep Running 58 171 299 Conclusion: As we have been able to see, there are slight differences in terms of hardware usage
+ I was surprised that the software did much better than expected, but the results may differ, considering community-made wallpapers may use more resources
+ The CPU temperature values may not be very reliable due to the CPU being watercooled thus these values are at the very low end of the scale
+ Wallpaper Engine does also have an impact on gaming performance, which can be kept to a minimum using the "Pause" or "Stop" behaviour for fullscreen applications
+With a hardware config as "enthusiast" as mine, i doubt that there will be serious performance issues with this application, but if you are gaming on a much weaker rig, i recommend turning down the settings of the live wallpapers a bit
+ At the end of the day, you will have to decide yourself wether you want to sacrifice resources for cool a$$ (a$$ can be taken literally) wallpapers or not
+I do not regret my 4 bucks on this software and will be using it from now on
+Posted: 9 March
+Early Access Review
+I purchased this software hoping it would return the same functionality Dream Scene (Live Wallaper) did in Windows Vista that was later removed for performance issues
+ The truth is this software is what Dream Scene should have been and is far more complex and configurable then the official feature ever was
+ I did a full review of this software at http://barnnerd
+com that will be published on 3/9/2017 at 6AM PST
+I am in no way affiliated with the company that makes this program and purchased the program for full price from Steam after discovering it
+ I would however love it if the author of this program contacted me as I would love to speak to him/her about some other features moving forward since I come from a software development background myself
+Thank you,Jerry Berg (aka
+ Barnacules)http://barnnerd
+com (YouTube 840k Subscribers / 91 million video views)http://twitter
+barnnerd
+comhttp://instagram
+barnnerd
+com 
