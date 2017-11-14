@@ -1,6 +1,6 @@
 import json                                     #we are going to use json
 
-input_file = ""
+input_file = "" #specify here
 
 with open(input_file, 'r') as my_file:              #we open a file
     retrieved_postings = json.load(my_file)         #we use the json.load() function to make sense of that JSON
