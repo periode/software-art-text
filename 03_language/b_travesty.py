@@ -1,3 +1,7 @@
+"""
+in this script, we take an input sentence, and we replace each of the nouns with their synonyms
+"""
+
 from textblob import TextBlob
 import random
 
@@ -6,35 +10,30 @@ processed = TextBlob(source)
 
 custom_dictionary = []
 
-for word, pos in processed.tags:
-    # print "word: %s - pos: %s" % (word, pos)
-    if str(pos) == 'NN':
-        # print "possibilities for %s:" % word,
+for word, tag in processed.tags:
+    if tag == 'NN':
 
-        entry = {
-            'word': word,
-            'others': []
+        entry = {               # each of our entries in our dictionary
+            'word': word,       # has the initial word
+            'others': []        # as well as a list of other possibilities
         }
 
         for synset in word.get_synsets(pos="n"):
-            for syn in synset.lemmas():               #this gets the set of nouns from which our word comes from
-                entry['others'].append(syn.name().replace('_', ' '))
+            for syn in synset.lemmas():                                 # here we loop through the list of lemmas that are related to the current noun
+                entry['others'].append(syn.name().replace('_', ' '))    # we also replace any possible '_' character with a ' ' space character when we add it to our list of other possibilities
                 if syn.antonyms():
-                    print syn.antonyms()[0].name()
                     entry['others'].append(syn.antonyms()[0].name().replace('_', ' '))
+        
+        custom_dictionary.append(entry) # then we add the entry to our dictionary
 
 
-        # print entry['synonyms']
-        custom_dictionary.append(entry)
+# this the part where we actually replace the source text
+for token in processed.tokenize():                      # we need to tokenize it in order to make sure we get each part of the sentences
+    for entry in custom_dictionary:                     # then for each token, we go through our custom dictionary
+        if token == entry['word']:                      # if we match the word
 
-        # print "--"
-
-for token in processed.tokenize():
-    for entry in custom_dictionary:
-        if token == entry['word']:
-
-            if len(entry['others']) != 0:
-                other = random.choice(entry['others'])
-                source = source.replace(token, other)
+            if len(entry['others']) != 0:               # and if we actually do have a word to replace it with!
+                other = random.choice(entry['others'])  # then we pick a random alternative
+                source = source.replace(token, other)   # and we replace it in the source text
 
 print source
