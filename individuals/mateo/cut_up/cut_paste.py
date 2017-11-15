@@ -12,7 +12,7 @@ def pnrFilter(id):
     top = (id == "tab_topsellers_content" or id == "tab_TopSellers_content") and bTop
     return new or top
 
-# Function to build Steam store links to maximise our scraping fun :)
+# Functions to build Steam store links to maximise our scraping fun :)
 def steamURL(tag = None, page = 0, tab = None):
     store = "https://store.steampowered.com"
 
@@ -31,7 +31,6 @@ def categoryURL(tagNum, page):
     url += str(page)
 
     return url
-
 
 # Retrieve command line arguments to scrape by tag
 bTag = False
@@ -199,7 +198,7 @@ with open(output + ".txt", "w") as file:
                 # =========== THREE LEVELS DOWN: Time to grab the reviews ===========
                 # ==== We finally got the review page so we just gotta save them ====
                 try:
-                    nonAlpha = re.compile(r'''[.!?]+|\s\s+|[\n\r]''')
+                    nonAlpha = re.compile(r'''(?![.]\w*[.])[.!?]+|\s\s+|[\n\r]''')
                     text = nonAlpha.split(review.text)
 
                     textList = []
