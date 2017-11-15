@@ -24,10 +24,10 @@ while True:
 
 	print "the %s %s %s %s." % (random.choice(adjectives), random.choice(doer), random.choice(verb), random.choice(noun))
 	conclusion = random.random()
-	if conclusion > 0.8
+	if conclusion > 0.8:
 		print "there is a %s." % random.choice(doer)
 		exit()
-	elif conclusion > 0.6
+	elif conclusion > 0.6:
 		print "there is no %s." % random.choice(doer)
 		exit()
 

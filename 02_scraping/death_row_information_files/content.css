@@ -1,0 +1,449 @@
+@charset "utf-8";
+/*
+FILE: CSS with media queries for all content pages. 
+BY: Frank Henderson, TDCJ Web Services
+DATE: February 01, 2017
+UPDATED: August 30, 2017
+*/
+
+.bold  {
+    font-weight: bold;
+}
+
+.bold_center  {
+    font-weight: bold;
+    align-content: center;
+    text-align: center;
+}
+
+.bold_center_large  {
+    font-weight: bold;
+    font-size: large;
+    align-content: center;
+    text-align: center;
+}
+
+.center  {
+    align-content: center;
+    text-align: center;
+}
+
+.bold_italic  {
+    font-weight: bold;
+    font-style: italic;
+}
+
+.italic  {
+    font-style: italic;
+}
+
+.italic_smaller  {
+    font-style: italic;
+    font-size: 12px;
+}
+
+.red  {
+    color: #FF0000;
+}
+
+.red-bold  {
+    font-weight: bold;
+    color: #FF0000;
+}
+
+.red-bold-italic  {
+    font-weight: bold;
+    font-style: italic;
+    color: #FF0000;
+}
+
+.red-italic  {
+    font-style: italic;
+    color: #FF0000;
+}
+
+.list_no_button {
+	list-style-type: none;
+}
+.list_alpha_upper {
+	list-style-type: upper-alpha;
+}
+.list_alpha_lower {
+	list-style-type: lower-alpha;
+}
+.list_roman_upper {
+	list-style-type: upper-roman;
+}
+.list_roman_upper_bold {
+	list-style-type: upper-roman;
+	font-weight: bold;
+}
+.list_roman_lower {
+	list-style-type: lower-roman;
+}
+.list_number {
+	list-style-type: decimal;
+}
+
+.h1_small  {
+    font-size: 18px;
+    margin-left: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 15px;
+}
+
+.mission_statement {  /* division mission statements */
+    font-family: "Times New Roman", Times, serif; 
+    font-style: italic;
+    color: #333333;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 9px;
+}
+
+/* special partitions (see also: @media (min-width: 968px)) */
+.div_container {
+	height: auto;
+	width: 100%;
+    overflow: auto;
+}
+.div_container_98 {
+	height: auto;
+	width: 98%;
+    overflow: auto;
+}
+.div_container_50 {
+	height: auto;
+	width: 50%;
+    overflow: auto;
+}
+
+.div_container_75 {
+	height: auto;
+	width: 75%;
+    overflow: auto;
+}
+
+.div_container_border {
+    height: auto;
+    width: 100%;
+    overflow: auto;
+    border: 1px solid #777;
+}
+.div_container_50_border {
+    height: auto;
+    width: 50%;
+    overflow: auto;
+    border: 1px solid #777;
+}
+
+.div_container_yellow {
+    height: auto;
+    width: 100%;
+    margin-top: 13px;
+    background-color: #FFF9A5;
+    overflow: auto;
+}
+
+/* standard table (use modifiers below for text alignment, borders etc.)  */
+.tdcj_table {border-style:solid; border-width:0px 0px 1px 1px; border-color:#333; border-collapse: collapse; }
+.tdcj_table th {
+	color: #FFFFFF;
+	background-color: #2e5f97;
+	border-style: solid;
+	border-width: 1px 1px 0px 0px;
+	border-color: #333;
+	padding: 4px;
+	font-size: 0.9em;
+}
+.tdcj_table th p { color:#FFF; }
+.tdcj_table td {
+	border-style:solid;
+	border-width:1px 1px 0px 0px;
+	border-color:#333;
+	padding: 4px;
+	font-size: 0.9em;
+}
+.tdcj_table caption {display: none}
+
+/* table modifiers */
+.indent  {margin-left: 10px; margin-right: 10px; }
+.left td { text-align:left; }
+.right td { text-align:right; }
+.center td { text-align:center; }
+.noborder { border-style: none; } .noborder td { border-style: none; }
+.rowline { border-style: none;  } .rowline td { border-width:0px 0px 01px 0px; }
+
+/* table wrap (for ALL tables; allows table content to scroll on smaller screens) */ 
+div.overflow  {	overflow-x: auto; }
+
+/* divs as tables (for non-tabular data; for spacing and alignments, use page-specific elements) */
+div.table	{ display: table; }
+div.tr		{ display: table-row; }
+div.td		{ display: table-cell; }
+
+/* return div for breadcrumb trail */
+.return_to_div {
+	/*clear:both; */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+    color: #333333;
+	line-height: normal;
+	text-decoration: none;
+	/*padding-top: 22px; */
+	padding-bottom: 30px;
+    margin-left: 10px;
+}
+
+/*use for photos or graphics that need a border and padding */
+.photo_borders_left {
+    float:left;
+    border:1px solid #000000;
+    margin:0px 12px 12px 0px
+}
+
+.photo_borders_right {
+    float:right;
+    border:1px solid #000000;
+    margin:0px 0px 12px 12px
+}
+
+.graphics_left {
+    float:left;
+    margin:0px 12px 12px 0px
+}
+
+.graphics_right {
+    float:right;
+    margin:0px 0px 12px 12px
+}
+
+
+/* JavaScript-off warnings */
+noscript {background-color:#FCC; padding:6px;}
+
+/*
+=====================================================
+BODY & CONTENT
+=====================================================
+*/
+
+#content_menu	{
+	display: block;
+	width: 180px;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #FFFFFF;
+}
+
+/*
+=====================================================
+PROGRESSIVELY ENHANCED STYLES
+=====================================================
+*/
+
+@media screen and (min-width: 640px) {
+
+#content	{
+	width: 97%;
+	margin-right: auto;
+}
+
+#content_menu {	/* left column menu */
+	display: table-cell;
+	background-image: url(../images/bkgrnd_image.jpg);	/* watermark image */
+	background-repeat: no-repeat; 
+	vertical-align: top;	/* very important!!!! */
+}
+
+#content_right {
+	display: table-cell;
+	background-color: #FFFFFF;
+	margin-left: 180px;
+	width: 100%;	/* very important!!!! */
+	padding-left: 10px;
+	padding-top: 8px;
+	height: 300px;	/* minimum page height - improves look of short pages */ 
+	vertical-align: top;	/* very important!!!! */
+}
+
+}
+
+@media screen and (min-width: 768px)  {
+
+#content	{
+	width: 98%;
+}
+
+}
+
+@media screen and (min-width: 968px)  {
+
+/* left & right partitions  */
+
+.div_30_left {
+    height: inherit;
+    width: 29%;
+    float: left;
+}
+.div_30_right {
+    height: inherit;
+    width: 29%;
+    float: right;
+}
+.div_20_right {
+    height: inherit;
+    width: 19%;
+    float: right;
+}
+.div_70_right {
+    height: inherit;
+    width: 69%;
+    float: right;
+}
+.div_70_left {
+    height: inherit;
+    width: 69%;
+    float: left;
+}
+.div_80_left {
+    height: inherit;
+    width: 79%;
+    float: left;
+}
+.div_25_left {
+    height: inherit;
+    width: 24%;
+    float: left;
+}
+.div_25_middle {
+    height: inherit;
+    width: 24%;
+    float: left;
+}
+.div_25_right {
+    height: inherit;
+    width: 24%;
+    float: left;
+}
+.div_75_right {
+    height: inherit;
+    width: 75%;
+    float: right;
+}
+.div_75_left {
+    height: inherit;
+    width: 75%;
+    float: left;
+}
+.div_20_left {
+    height: inherit;
+    width: 20%;
+    float: left;
+}
+.div_80_right {
+    height: inherit;
+    width: 79%;
+    float: right;
+}
+.div_50_left {
+    height: inherit;
+    width: 49%;
+    float: left;
+}
+.div_50_right {
+    height: inherit;
+    width: 49%;
+    float: right;
+}
+ .div_33_left {
+    height: inherit;
+    margin-right: 1px;
+    width: 32%;
+    float: left;
+}
+ .div_33_middle {
+    height: inherit;
+    margin-right: 1px;
+    width: 32%;
+    float: left;
+}
+ .div_33_right {
+    height: inherit;
+    margin-right: 1px;
+    width: 32%;
+    float: left;
+}
+    
+.div_40_left {
+    height: inherit;
+    width: 39%;
+    float: left;
+}
+.div_60_right {
+    height: inherit;
+    width: 59%;
+    float: right;
+}
+    
+.div_10_left {
+    height: inherit;
+    width: 10%;
+    float: left;
+}
+.div_90_right {
+    height: inherit;
+    width: 89%;
+    float: right;
+}
+
+    .div_left_bold {     /* for ED and DED photos */
+    height: inherit;
+    width: inherit;
+    float: left;
+    padding-left: 10px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#pics_volwin {
+	width:445px;
+	float: left;
+	text-align: left;
+	padding: 16px 11px 11px 11px;
+	font-family:Arial, Helvetica, sans-serif;
+	}
+
+#pics_volwin_left {
+	width:445px;
+	float: left;
+	text-align: left;
+	padding: 16px 11px 11px 11px;
+	font-family:Arial, Helvetica, sans-serif;
+	}
+
+}
+
+@media screen and (min-width: 1026px)	{
+	
+.container	{	
+	border-left: 1px solid #DDD;	/* since they occupy 2px width total, borders should appear at 1024 + 2px,  */
+	border-right: 1px solid #DDD;	/* otherwise a horizontal scroll bar will appear on 1024 monitors */
+	border-bottom: 0px;
+	border-top: 0px;
+}
+
+}
+
+@media print {
+
+#content_menu {
+	display: none;	
+}
+
+}
