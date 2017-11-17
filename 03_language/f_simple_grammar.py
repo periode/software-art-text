@@ -13,12 +13,15 @@ some abbreviations are as follows:
     N: noun
     V: verb
     J: adjective
+    PP: prepositional phrase
     PP: preposition
+    det: determinant/article
 """
 
 my_grammar = {
         "S": ["NP VP NP"],                              # the left part is called an axiom
-        "NP": ["N", "the N", "a N"],                    # the right part is a list of which elements that axiom is made of
+        "NP": ["N", "det N", "det N"],                    # the right part is a list of which elements that axiom is made of
+        "det": ["the", "a"],
         "VP": ["V3", "cannot V"],                       # notice how the list on the left sometimes contains other axioms
         "N": ["trust", "hope", "self", "distance"],
         "V": ["stand", "hear", "tell", "show"],

@@ -7,7 +7,7 @@ import random
 
 source = "I felt as if the world left me like a replacement. It was an evening after working in a factory. I decided to wade through the crowd of artists. I made my way towards the exit."
 processed = TextBlob(source)
-
+print source
 custom_dictionary = []
 
 for word, tag in processed.tags:
@@ -23,7 +23,7 @@ for word, tag in processed.tags:
                 entry['others'].append(syn.name().replace('_', ' '))    # we also replace any possible '_' character with a ' ' space character when we add it to our list of other possibilities
                 if syn.antonyms():
                     entry['others'].append(syn.antonyms()[0].name().replace('_', ' '))
-        
+
         custom_dictionary.append(entry) # then we add the entry to our dictionary
 
 
