@@ -12,9 +12,11 @@ wordApi = WordApi.WordApi(client)
 #### initialize and process sentence ####
 print '\n'
 print 'SECOND PARAGRAPH'
-paragraph = '''let me sail to the voice that is as lifeless as the sun. 
-There is no death in this paradise.
-Nor happiness in this hell.'''
+paragraph = """I traveled to your silence.
+It felt as pale as the grey ocean waves.
+I fell where life could no longer be found. 
+And I sailed without feeling alive."""
+
 processed_paragraph = TextBlob(paragraph)
 print paragraph
 
