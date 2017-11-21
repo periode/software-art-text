@@ -19,13 +19,17 @@ some abbreviations are as follows:
 """
 
 my_grammar = {
-        "S": ["NP VP NP"],                              # the left part is called an axiom
-        "NP": ["N", "det N", "det N"],                    # the right part is a list of which elements that axiom is made of
-        "det": ["the", "a"],
+        "S": ["dN and dN V , PP V dN"],                              # the left part is called an axiom
+        "dN": ["det ADJ N"],                    # the right part is a list of which elements that axiom is made of
+        "det": ["the", "a", "that"],
         "VP": ["V3", "cannot V"],                       # notice how the list on the left sometimes contains other axioms
-        "N": ["trust", "hope", "self", "distance"],
-        "V": ["stand", "hear", "tell", "show"],
-        "V3": ["stands", "hears", "tells", "shows"]
+        "N": ["Friday", "night", "lights", "place", "music", "swing", "anybody", "guy", "night", "everything", "mood", "dance", "chance", "queen", "beat", "tambourine", "time", "life", "girl"],
+        "V": ["am", "look at", "get", "come", "feel", "dance", "jive", "have", "see", "watch"],
+        "V3": ["is", "looks at", "gets", "comes", "feels", "dances", "jives", "having", "sees", "watching"],
+        "PP": ["they", "you"],
+        "ADJ": ["dancing", "low", "right", "young", "high", "rock", "fine", "sweet"],
+        "Vi": ["to go", "to dance", "to jive", "to have", "to get"],
+        "Vadj": ["V ADJ"]
         }
 
 
@@ -46,7 +50,7 @@ def write_a_sentence(grammar, axiom):
     return sentence                                                 # and we return all that we've found!
 
 
-for i in range(0, 5):                                               # this is how you write a for loop in python
+for i in range(0, 6):                                               # this is how you write a for loop in python
     words = write_a_sentence(my_grammar, "S")                       # we want a write a sentence using my_grammar defined above, and with the starting point "S"
     my_sentence = " ".join(words)                                   # because it returns a list, we need to join all elements with a space
     print my_sentence + "."                                         # and we print it!

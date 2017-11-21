@@ -1,0 +1,12 @@
+Not that I care but I’m 20 years old, and I’ve never been kissed and Here’s the problem:
+Find the extreme values of f on the region described by the inequality g
+f(x, y) = x2 + y2 + 4x - 4y
+g(x, y) = x2 + y2 ≤ 9
+What I’ve done so far:
+I solved for the partial derivatives of both f and g, getting the following,
+fx(x,y) = 2x + 4
+fy(x,y) = 2y - 4
+gx(x,y) = 2x
+gy(x,y) = 2y =  60… and irresistible to men of 20 who want sex with no strings … and However, I’m not sure I did this correctly. In other similar problems in class, we’ve set up the third equation in the system by making x2 + y2 = 9, not as an inequality. 
+
+Note that 8/(λ2 - 2λ + 1) = 9 implies that (λ-1)2 =  20 and I’ve Never Been in a Relationship! (talking about my fear … but next Its 0, and 1, and every possible value in between… at the same time.

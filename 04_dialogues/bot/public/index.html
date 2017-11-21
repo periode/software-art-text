@@ -1,0 +1,28 @@
+<html>
+<head>
+  <title>eliza</title>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script>
+  function send(){
+    var w = document.getElementById('words').value;
+    document.getElementById('dialogue').innerHTML += "<br>you: " + w;
+
+    $.ajax({
+      method: "POST",
+      url: '/discuss',
+      data: {words: w}
+    }).done(function(msg){
+      document.getElementById('dialogue').innerHTML += "<br>lucy: " + msg;
+    });
+  }
+  </script>
+</head>
+<body style="margin-left: 10%;">
+  <img style=""src="https://1.bp.blogspot.com/-qFgzdcZDXfY/TnabKbPXLmI/AAAAAAAAG_w/wx-S9kVnnTY/s320/Lucy%2B-%2Bpsychiatric%2Bhelp%2B5%2Bcents.gif" />
+  <div style="margin-top: 5%" id="dialogue">
+    lucy: hello. how are you feeling today?
+  </div>
+  <input type="text" id="words"/>
+  <button onclick="send()">tell</button>
+</body>
+</html>

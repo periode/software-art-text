@@ -5,7 +5,6 @@ import random
 """
 this is our grammar, it represents the structure of one or more sentences
 we are going to use it as a reference to generate concrete sentences.
-
 some abbreviations are as follows:
     S: sentence
     NP: noun phrase
@@ -20,12 +19,12 @@ some abbreviations are as follows:
 
 my_grammar = {
         "S": ["NP VP NP"],                              # the left part is called an axiom
-        "NP": ["N", "det N", "det N"],                    # the right part is a list of which elements that axiom is made of
+        "NP": ["det ADJ N"],                    # the right part is a list of which elements that axiom is made of
         "det": ["the", "a"],
-        "VP": ["V3", "cannot V"],                       # notice how the list on the left sometimes contains other axioms
-        "N": ["trust", "hope", "self", "distance"],
-        "V": ["stand", "hear", "tell", "show"],
-        "V3": ["stands", "hears", "tells", "shows"]
+        "VP": ["V3"],                       # notice how the list on the left sometimes contains other axioms
+        "N": ["feeling", "emotion", "euphoria", "affection","sentiment","passion","desire","guilt","wrongdoing","evil","wickedness","sin","immorality","deception"],
+        "V3": ["demonstrates", "manifests", "presents", "shows", "exhibits"],
+        "ADJ": ["burning","captivating","lustful","pleasing","gorgeous","grotesque","horrid", "hideous", "deformed","disfigured","loathsome"]
         }
 
 
