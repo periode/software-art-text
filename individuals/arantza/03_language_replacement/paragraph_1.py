@@ -40,7 +40,7 @@ for word, tag in processed_paragraph.tags:
 			'synonyms': []
 		}
 		## loop through list of synonyms in wordnet and append ##
-		for synset in word.get_synsets(pos='n'):
+		for synset in word.get_synsets(pos='v'):
 			for syn in synset.lemmas():
 				entry['synonyms'].append(syn.name().replace('_', ' '))
 
@@ -54,7 +54,7 @@ for word, tag in processed_paragraph.tags:
 			'synonyms': []
 		}
 		## loop through list of synonyms in wordnet and append ##
-		for synset in word.get_synsets(pos='n'):
+		for synset in word.get_synsets(pos='j'):
 			for syn in synset.lemmas():
 				entry['synonyms'].append(syn.name().replace('_', ' '))
 
@@ -67,7 +67,6 @@ for token in processed_paragraph.tokenize():
 	## nouns ##
 	for entry in nouns:
 		if token == entry['word']:
-
 			if len(entry['synonyms']) != 0:
 				synonym = random.choice(entry['synonyms'])
 				paragraph = paragraph.replace(token, synonym)
@@ -75,7 +74,6 @@ for token in processed_paragraph.tokenize():
 	## verbs ##
 	for entry in verbs:
 		if token == entry['word']:
-
 			if len(entry['synonyms']) != 0:
 				synonym = random.choice(entry['synonyms'])
 				paragraph = paragraph.replace(token, synonym)
@@ -83,7 +81,6 @@ for token in processed_paragraph.tokenize():
 	## adjectives ##
 	for entry in adjectives:
 		if token == entry['word']:
-
 			if len(entry['synonyms']) != 0:
 				synonym = random.choice(entry['synonyms'])
 				paragraph = paragraph.replace(token, synonym)
