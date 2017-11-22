@@ -17,7 +17,7 @@ button {
 }
 
 button:hover {
-    background-color: gray;
+    /*background-color: gray;*/
 }
 
 .root {
