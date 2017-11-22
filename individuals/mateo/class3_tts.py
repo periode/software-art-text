@@ -1,4 +1,4 @@
-import pyttsx
+import pyttsx3 as pyttsx
 
 #def f_u_wrap(num):
 #    def proxy(decorate):

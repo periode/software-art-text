@@ -19,8 +19,11 @@ function getOptions(callback) {
             let button1 = document.getElementById("choice-1");
             let button2 = document.getElementById("choice-2");
 
-            button1.word = res.body[0];
-            button2.word = res.body[1];
+            button1.word = res.body[0]['text'];
+            button2.word = res.body[1]['text'];
+
+            button1.choice = res.body[0]['key'];
+            button2.choice = res.body[1]['key'];
 
             button1.innerText = button1.word;
             button2.innerText = button2.word;
@@ -43,7 +46,7 @@ function sendVote(i) {
     request.post('/api/poll/')
         .type('form')
         .send({ word: button.word })
-        .send({ index: i })
+        .send({ choice: button.choice })
         .end(getOptions);
 }
 
