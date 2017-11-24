@@ -4,8 +4,53 @@ import random
 import time
 #import pyttsx
 import sys
+import socket
+
+from pythonosc import osc_message_builder, udp_client, osc_bundle_builder
 
 app = Flask(__name__)
+
+ip = "127.0.0.1"
+ip2 = "10.226.10.21"
+ip3 = 'localhost'
+port = 2046
+
+#sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+client = udp_client.UDPClient(ip3, port)
+
+def sendSimple(msg):
+    client.send_message("/test", msg.encode())
+    print("send")
+
+def sendMult(add, *msg):
+    global client
+    message = osc_message_builder.OscMessageBuilder(address=add)
+
+    for elem in msg:
+        print('Element:', elem)
+        message.add_arg(elem)
+
+    message = message.build()
+    client.send(message)
+
+def send(*msg):
+    #bundle = osc_bundle_builder.OscBundleBuilder(osc_bundle_builder.IMMEDIATELY)
+    #message = osc_message_builder.OscMessageBuilder(address='/test')
+
+    #message.add_arg(len(msg))
+
+    #for elem in msg:
+
+
+    client.send_message("/test", msg.encode())
+    print("send")
+    #global sock
+    #message = msg
+    #sock.sendto(message.encode('utf-8'), (ip3, port))
+    #print('Sending', message, "to port", port)
+    #.encode('utf-8')
+
+
 #voices = speech.getProperty('voices')
 
 #voice_robot = random.choice(voices).id
@@ -121,6 +166,17 @@ def poll():
         lst.append(word)
 
         keys = []
+        p = content[state]['poll']
+        for key in p:
+            keys.append(key)
+
+        index = -1;
+        if keys[0] == choice:
+            index = 0
+        elif keys[1] == choice:
+            index = 1
+
+        sendMult('/text', index, word)
 
         if time.clock() >= timestamp + 30:
             reset()
@@ -179,6 +235,7 @@ def reset():
 #print("stupid snek")   
 #speech = pyttsx.init()
 
+sendMult('/test', 'fak', 'dis', 3)
 
 #if __name__ == '__main__':
 #    app.run(host='10.225.87.183', port=5000)
