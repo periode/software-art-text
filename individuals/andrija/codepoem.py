@@ -3,7 +3,7 @@ class theHumanCondition:
         self.solitude = solitude
     def alone(self):
         print "Are we lone?"
-        if solitude == True:
+        if self.solitude == True:
             print "yes, we are"
         else:
             print "No, we are not"
