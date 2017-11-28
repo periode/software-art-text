@@ -11,7 +11,7 @@ class Failure:
         return might_pass
 
     def no_study(self):
-        might_fail = False
+        might_fail = True
         print self.student + ' did not study for the ' + self.subject + ' ' + self.exam + "."
         # the student
         return might_fail
