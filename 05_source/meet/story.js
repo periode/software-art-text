@@ -16,7 +16,6 @@ memories = [];
 document.addEventListener("DOMContentLoaded", function(){
 
 var end = document.getElementById("answer");
-epilogue('the end is just the beginning');
 
 var Sun = function(){
 	this.pos = 0;
