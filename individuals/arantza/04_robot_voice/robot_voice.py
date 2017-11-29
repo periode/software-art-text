@@ -12,7 +12,7 @@ wordApi = WordApi.WordApi(client)
 
 #### initialize and process sentence ####
 life_sentence = 'this is the eternal circle of a beautiful life'
-death_sentence = 'this is the fleeting circle of the terrifying death'
+death_sentence = 'this is the fleeting circle of the ending death'
 processed_sentence = TextBlob(life_sentence)
 
 #### initialize noun lists ####
