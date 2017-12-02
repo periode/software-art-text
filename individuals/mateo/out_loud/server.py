@@ -1,4 +1,4 @@
-# ====| CUT/UP - Flask Server |====
+# ====| OUT/LOUD - Flask Server |====
 from flask import Flask, render_template, request, url_for, jsonify, redirect
 import random
 import time
@@ -134,6 +134,7 @@ wordsC = ['TEST', 'IS', 'SUCCESSFUL']
 wordsD = ['THIS', 'WAS A', 'TRIUMPH']
 
 timestamp = 0
+period = 30;
 
 testPoll = {
     '0' : {
@@ -153,6 +154,7 @@ def root():
 @app.route('/api/poll/', methods=['GET', 'POST'])
 def poll():
     global timestamp
+    global period
     global state
 
     if request.method == 'POST':
@@ -178,7 +180,7 @@ def poll():
 
         sendMult('/text', index, word)
 
-        if time.clock() >= timestamp + 30:
+        if time.clock() >= timestamp + period:
             reset()
             p = content[state]['poll']
 
@@ -205,9 +207,13 @@ def poll():
     pollObj = content[state]['poll']
     for item in pollObj:
         text = pollObj[item]['options']
+        vol = (time.clock()-timestamp)/period
+        if vol > 1:
+            vol = 1.0
         res.append({
             'key': item,
-            'text': random.choice(text)
+            'text': random.choice(text),
+            'volume': vol
             })
 
     #res.append(random.choice(wordsA))
