@@ -73,13 +73,13 @@ html
 			function send(){
 			var w = document.getElementById('words').value;
 			
-			document.getElementById('dialogue').innerHTML += "<br>you: " + w;
+			document.getElementById('dialogue').innerHTML += "<br>You: " + w;
 			$.ajax({
 			method: "POST",
 			url: '/discuss',
 			data: {words: w}
 			}).done(function(msg){
-			document.getElementById('dialogue').innerHTML += "<br>lucy: " + msg;
+			document.getElementById('dialogue').innerHTML += "<br>Me: " + msg;
 			});
 			}
 		
