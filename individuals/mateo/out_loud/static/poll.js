@@ -28,6 +28,8 @@ function getOptions(callback) {
             button1.innerText = button1.word;
             button2.innerText = button2.word;
 
+            voice.setVolume(res.body[0]['volume']);
+
             if (callback) {
                 callback(button1, button2);
             }
