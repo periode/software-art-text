@@ -61,4 +61,3 @@ document.addEventListener('DOMContentLoaded', () => {
         //b2.addEventListener('touchstart', () => { sendVote(1); });
     })
 }, false);
-

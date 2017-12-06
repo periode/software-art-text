@@ -1,0 +1,367 @@
+
+QUESTION:
+And html
+I have a button 'import database'.When i clicks the button the loader should be shown until the loading complete.But my problem is the  loader image disappear suddenly after displays for a second.How can i solve this??
+ANSWERS:
+Learn the code from this chat - you can download it and experiment with it. But if you are beginner you will have to learn some things first because this is no hello world task. Good luck. 
+
+You can loop through the other elements and close them first in your "show" function
+
+and, in datatable...
+
+
+QUESTION:
+This question already has an answer here:
+I am reading a .txt file which has a chat between two people. This text file is being modified in real-time as these two people are interacting in real time. I am reading this text file and trying to show the chat on a web-based application, I am able to read the text file once but when it is getting modified I am not able to show modified chat. I have HTML page and parsing of chat is done in PHP and script is in JS.
+Thank you!
+ANSWERS:
+I too got same problem.
+
+Add the above code to script and set the specific column with Date values with { "sType": "date-uk" } and others as null, see below:
+
+Put all the json response on a key which is data here then at front end define that the server response is in JSON by dataType and then there is no need to parse data by JSON.parse()
+
+
+QUESTION:
+This question already has an answer here:
+I am reading a .txt file which has a chat between two people. This text file is being modified in real-time as these two people are interacting in real time. I am reading this text file and trying to show the chat on a web-based application, I am able to read the text file once but when it is getting modified I am not able to show modified chat. I have HTML page and parsing of chat is done in PHP and script is in JS.
+Thank you!
+ANSWERS:
+It's a trade-off between the two options of which one meets the actual needs of the system with acceptable drawbacks.
+
+For example, in PHP (with MySQL), I use the following:
+
+I have shown show/hide using style property . You can do with your class too.
+
+
+$('[data-response^=op]').attr("style","display:none");
+$("#select-box").on("change",function(){
+  if($(this).val() !="" && $(this).val()<=3 ){
+    $('[data-response^=op]').attr("style","display:none");
+    var selector = "op"+$(this).val();
+    $(document).find("[data-response='"+selector+"']").attr("style","display:block;");
+    $("#other-questions").attr("style","display:block");
+  }else{
+   $("#other-questions").attr("style","display:none");
+  }
+
+})
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<form>
+  <div data-form-order="1">
+
+    <div id="opening-question">
+      <select id="select-box">
+      <option value="0">- please select -</option>
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+      <option value="3">Option 3</option>
+    </select>
+    </div>
+
+    <div data-response="op1">
+      This is content for option 1.
+    </div>
+    <div data-response="op2">
+      This is content for option 2.
+    </div>
+    <div data-response="op3">
+      This is content for option 3.
+    </div>
+  </div>
+
+  <div data-form-order="2" id="other-questions" style="display:none">
+    Rest of form content. This area should show when option values 1-3 are selected in the select field.
+  </div>
+</form>
+
+
+
+
+
+QUESTION:
+I'm using the aws-sdk for NodeJS to interact with a DynamoDB table. This is my first look at DynamoDB.
+When using a call like getItem() or updateItem(), the data structure includes types, like this:
+Is there any way to pass and receive these objects without the types..? So...
+Or, any helper functions already written that will convert objects to and from this format..?
+So I could convert to it when populating call params, and convert from it when receiving data.
+Trying to avoid accessing my data like:
+I know I could write something myself, just wondering if anyone knows of functions/options already available that would do this. I couldn't find any.
+ANSWERS:
+I was using span with in td like 03/21/2017, by doing this, datatable treated this as string and sorting did not work.
+
+Also remember to load the http://momentjs.com/
+
+
+
+$('#select-box').change(function(){
+
+var selectVal = $(this).val();
+$('.content').hide();
+$('.content[data-response="op' + selectVal + '"]').show();
+
+});
+.content {
+display: none;
+}
+<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+
+<form>
+  <div data-form-order="1">
+
+    <div id="opening-question">
+      <select id="select-box">
+      <option value="0">- please select -</option>
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+      <option value="3">Option 3</option>
+    </select>
+    </div>
+
+    <div class="content" data-response="op1">
+      This is content for option 1.
+    </div>
+    <div class="content" data-response="op2">
+      This is content for option 2.
+    </div>
+    <div class="content" data-response="op3">
+      This is content for option 3.
+    </div>
+  </div>
+
+  <div data-form-order="2" id="other-questions">
+    Rest of form content. This area should show when option values 1-3 are selected in the select field.
+  </div>
+</form>
+
+
+
+
+
+QUESTION:
+This question already has an answer here:
+I am reading a .txt file which has a chat between two people. This text file is being modified in real-time as these two people are interacting in real time. I am reading this text file and trying to show the chat on a web-based application, I am able to read the text file once but when it is getting modified I am not able to show modified chat. I have HTML page and parsing of chat is done in PHP and script is in JS.
+Thank you!
+ANSWERS:
+jQ below
+
+Here's what I have done in my PHP:
+
+Next learn about javascript and in general about events.
+If you don't know javascript - it is time to learn it.
+
+
+QUESTION:
+I am using a Jquery plugin called datatables
+Its fantastic, however I cannot get the dates to sort correctly according to the dd/mm/yyyy format.
+I have looked at their support formats but none of these fixes seem to work.
+Can anybody here help me please?
+ANSWERS:
+You can loop through the other elements and close them first in your "show" function
+
+CSS
+
+Therefore, you may display the date in any format you want; just have your server return the sorting criteria based only upon the sortColumnName.
+
+
+QUESTION:
+This question already has an answer here:
+I created json with php. Data coming with ajax. But JSON.parse is  giving an “undefined” object. Why ?
+Php CODE
+Ajax CODE
+json
+ANSWERS:
+I would suggest using classes for this, there is no need for data attributes.
+
+
+
+$(function() {
+    $('#select-box').change(function(){
+        if($('#select-box').val() == '1') {
+            $('.response1').show();
+            $('.response2').hide();
+            $('.response3').hide();
+            $('#content').show();
+        } 
+        else if($('#select-box').val() == '2') {
+            $('.response1').hide();
+            $('.response2').show();
+            $('.response3').hide();
+            $('#content').show();
+        }
+        else if($('#select-box').val() == '3') {
+            $('.response1').hide();
+            $('.response2').hide();
+            $('.response3').show();
+            $('#content').show();
+        } 
+    });
+});
+.response1, .response2, .response3 {
+  display: none;
+}
+
+#content {
+  display: none;
+}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<form>
+  <div data-form-order="1">
+
+    <div id="opening-question">
+      <select id="select-box">
+      <option value="0">- please select -</option>
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+      <option value="3">Option 3</option>
+    </select>
+    </div>
+
+    <div class='response1' data-response="op1">
+      This is content for option 1.
+    </div>
+    <div class='response2' data-response="op2">
+      This is content for option 2.
+    </div>
+    <div class='response3' data-response="op3">
+      This is content for option 3.
+    </div>
+  </div>
+
+  <div id='content' data-form-order="2" id="other-questions">
+    Rest of form content. This area should show when option values 1-3 are selected in the select field.
+  </div>
+</form>
+
+
+
+
+The column you have dates, you should define with the sType like the code above.
+
+
+QUESTION:
+I currently have the below javascript to detect changes in my form.
+I now need to include whether or not a change has been made in a call to the controller which means that the value can no long be stored in javascript as this is client side.
+ANSWERS:
+use this snippet!
+
+then only this :
+
+$(document).ready(function() {
+
+
+QUESTION:
+I work on my angularjs project.
+Here is my cotroller:
+How to make function  $scope.getRecords to be triggered when controll is loaded.
+ANSWERS:
+I too got same problem.
+
+$(document).ready(function() {
+
+The column you have dates, you should define with the sType like the code above.
+
+
+QUESTION:
+Is it possible to make based on this actual one div at a time, that is to say both of the two events onclick can't open , but if one is open and the other one is clicked the first automatically close. By the way the context which this code is used doesn't allow the use of Jquery. Thanks for your help
+
+
+<style type="text/css">
+  .link{text-decoration:none; color:white;}
+
+  .link:visited{color:white}
+
+.row {
+  display: flex; /* equal height of the children */
+}
+
+.col {
+  flex: 1; /* additionally, equal width */
+  
+  padding: 1em;
+  border: solid;
+}
+
+div {font-family:'Varela Round';
+}
+  
+  .opener {
+  background-color: #07183d;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border: 1px white solid;
+}
+
+.benefits {
+  background-color: #07183d;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  width:300px;
+}
+</style>
+<style type="text/css">}
+a {
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+  color: white;
+}
+#upbutton {
+  border: 1px dotted white;
+}
+</style>
+<script>function show(id) { 
+        if(document.getElementById('b'+id).style.display=='none') { 
+            document.getElementById('b'+id).style.display='block'; 
+        } 
+        return false;
+    } 
+    function hide(id) { 
+        if(document.getElementById('b'+id).style.display=='block') { 
+            document.getElementById('b'+id).style.display='none'; 
+        } 
+        return false;
+    }
+</script>
+<div class="row">
+<div class="opener col"><a href="#1" name="1" onclick=" show('1');" class="link">SOCIETES: 400</a>
+
+<div class="benefits" id="b1" style="display:none;">Part SBF 120 : 120<br />
+Part Filiales +100M€: 280
+<div id="upbutton"><a onclick=" hide('1');" >fermer</a></div>
+</div>
+</div>
+
+<div class="opener col"><a href="#1" name="1" onclick=" show('2');" class="link" >CONTACTS: 25 400</a>
+
+<div class="benefits col" id="b2" style="display:none;">Part CAC 40 : 15 700<br />
+Part Filiales +100M€: 9 700<br />
+% contacts IT: 21%
+<div id="upbutton"><a onclick=" hide('2');">fermer</a></div>
+</div>
+</div>
+<div class="opener col">EMAILS NOMINATIFS: 400</div>
+
+<div class="opener col">OPT OUT: 3%</div>
+
+  <div class="opener col">LIGNES DIRECTES: 35%</div></div>
+
+
+
+ANSWERS:
+$(document).ready(function() {
+
+Found this: https://github.com/kayomarz/dynamodb-data-types
+
+Note however that users can still change hidden inputs if they want to.  This is not a secure measure, but can be an effective one if "security" isn't a concern here.
+

@@ -1,0 +1,134 @@
+
+QUESTION:
+I am a beginner in Arduino. I would like to control 64 LEDs using 2 Arduino Mega boards.
+The logic is:
+I am using pin 52 as TX and pin 53 as RX for both.
+And now the problem is that after Arduino 1 finishes blinking and sends out the signal (HIGH) to Arduino 2, it doesn't wait for the signal from Arduino 2 but resets itself.
+Can anyone have a look of my code to see whether it is a logical mistake or a coding error?
+ANSWERS:
+When you do this, you have to make sure that Arduino 2 sets its TX pin to LOW first, before playing with the LEDs. Only when it is finished, will should it set its TX pin to HIGH.
+
+You need to interlock the shutdown sequence:
+
+If you cant find out the problem try writing the code from the start again or run it through a bug interpreter.
+
+
+QUESTION:
+This question already has an answer here:
+I'm having a problem involving my android app and an arduino board. I installed an app that searches for available bluetooth devices and connects to them, now I want when the devices disconnect a notification is sent to the mobile device ... Anyone know how to do this function ???
+ANSWERS:
+You are really abusing the interrupt.  This is not the kind of thing interrupts are for.  Interrupt should be super fast, no time for communications there.  So the real question is why do you think you need an interrupt for this?
+
+For things like this first thing you do, read the data sheet of your LED and see how much current they draw. If you got like 100 LED and each draw 20 mA, that would be 2 Amps and not only Arduino can not supply it, you are risking burning your Arduino. After you figured out how much current your system needs, you gotta use a power source that can handle it. You got several options, for example a BJT is a current amplifier but it complicates the design and needs some background in electrical engineering. The other option would be using external power sources such as batteries or wall plugs. Then, you just need to buy a good adapter or voltage regulator that can handle your current need. Also, in that case you will need some sort of relay to control the leds with your Arduino. What Relay does is that it lets you turn it on and off with micro controller logic, but when it is on it uses an external power source.
+
+You are really abusing the interrupt.  This is not the kind of thing interrupts are for.  Interrupt should be super fast, no time for communications there.  So the real question is why do you think you need an interrupt for this?
+
+
+QUESTION:
+This question already has an answer here:
+I'm having a problem involving my android app and an arduino board. I installed an app that searches for available bluetooth devices and connects to them, now I want when the devices disconnect a notification is sent to the mobile device ... Anyone know how to do this function ???
+ANSWERS:
+The C++ program is printing the number of characters read rather than the characters themselves. For example, if your Arduino code printed "137", the C++ code would read "137\r\n" and set bytes_read to 5 (because there are 5 characters in 137\r\n).
+
+For things like this first thing you do, read the data sheet of your LED and see how much current they draw. If you got like 100 LED and each draw 20 mA, that would be 2 Amps and not only Arduino can not supply it, you are risking burning your Arduino. After you figured out how much current your system needs, you gotta use a power source that can handle it. You got several options, for example a BJT is a current amplifier but it complicates the design and needs some background in electrical engineering. The other option would be using external power sources such as batteries or wall plugs. Then, you just need to buy a good adapter or voltage regulator that can handle your current need. Also, in that case you will need some sort of relay to control the leds with your Arduino. What Relay does is that it lets you turn it on and off with micro controller logic, but when it is on it uses an external power source.
+
+The C++ program is printing the number of characters read rather than the characters themselves. For example, if your Arduino code printed "137", the C++ code would read "137\r\n" and set bytes_read to 5 (because there are 5 characters in 137\r\n).
+
+
+QUESTION:
+I am working on an LED display project and trying to show some words on the display, though I can't get continuous lines to light up. Below is the code.
+Right now, I can at most only light up two rows, but I want the capability to be able to light up three rows at once to create letters. Help of any kind is appreciated. Below is also how the LED display looks like.
+
+ANSWERS:
+When you do this, you have to make sure that Arduino 2 sets its TX pin to LOW first, before playing with the LEDs. Only when it is finished, will should it set its TX pin to HIGH.
+
+When you use Serial.readString() it tries to read until it gets a timeout.
+The default timeout on serial is 1 sec. That means that after the last character has been read, it waits 1 sec. more before it finishes. You can set the timeout value manually in the setup by using Serial.setTimeout(10); right after Serial.begin() or as @Sami suggested, you can use Serial.readStringUntil("xxx") where 'xxx' is the end of the string that you send fx. '\n' or '\r\n' if you terminate the string with a linebreak.
+
+This code loops round forever. It has no way to stop (unless you press ctrl-C)
+
+
+QUESTION:
+so I am making this game "stop it" which is a game that (in my case) are 6 led's next to eachother, glowing + making a sound 1 by 1 and every time you press button 1 (knop1), when led 1 burns, the leds start blinking faster.
+I have that figured out
+But I need a 2nd button (knop2) which you need to be able to press at any time to fully stop the game, but I keep failing on this.
+I have tried many things but every one of them failed
+Also sorry for a somewhat complex code...
+This is the code:
+ANSWERS:
+When you do this, you have to make sure that Arduino 2 sets its TX pin to LOW first, before playing with the LEDs. Only when it is finished, will should it set its TX pin to HIGH.
+
+Arduino #2 should keep its TX line HIGH while it's busy and wants to delay the reset.
+
+For things like this first thing you do, read the data sheet of your LED and see how much current they draw. If you got like 100 LED and each draw 20 mA, that would be 2 Amps and not only Arduino can not supply it, you are risking burning your Arduino. After you figured out how much current your system needs, you gotta use a power source that can handle it. You got several options, for example a BJT is a current amplifier but it complicates the design and needs some background in electrical engineering. The other option would be using external power sources such as batteries or wall plugs. Then, you just need to buy a good adapter or voltage regulator that can handle your current need. Also, in that case you will need some sort of relay to control the leds with your Arduino. What Relay does is that it lets you turn it on and off with micro controller logic, but when it is on it uses an external power source.
+
+
+QUESTION:
+so I am making this game "stop it" which is a game that (in my case) are 6 led's next to eachother, glowing + making a sound 1 by 1 and every time you press button 1 (knop1), when led 1 burns, the leds start blinking faster.
+I have that figured out
+But I need a 2nd button (knop2) which you need to be able to press at any time to fully stop the game, but I keep failing on this.
+I have tried many things but every one of them failed
+Also sorry for a somewhat complex code...
+This is the code:
+ANSWERS:
+The problem isn't the time.  The problem is likely that your sensor uses the I2C and it is disabled during an interrupt routine, or it's some other communication protocol that relies on interrupts to function and is therefore disabled during your ISR.
+
+The problem isn't the time.  The problem is likely that your sensor uses the I2C and it is disabled during an interrupt routine, or it's some other communication protocol that relies on interrupts to function and is therefore disabled during your ISR.
+
+If you cant find out the problem try writing the code from the start again or run it through a bug interpreter.
+
+
+QUESTION:
+I currently working to recreate a quad-copter controller.
+I am working on getting data from my gyro sensor, and to do that, I'm using
+an ISR with an interuption.
+My problem is, when I call my function "gyro.getX" on the main program, it work.
+But, when I call this function from my ISR, it doesn't work.
+I thing that I find the reson of the bug, the function I'm using is provided by the "Adafruit_LSM9DS0" library (from ST), and it used a "timestamp".
+I thing that the current time from my ISR is different that the current time from my Main program, but i don't know how to fi it.
+Here a shortcut of my program:
+ANSWERS:
+When you use Serial.readString() it tries to read until it gets a timeout.
+The default timeout on serial is 1 sec. That means that after the last character has been read, it waits 1 sec. more before it finishes. You can set the timeout value manually in the setup by using Serial.setTimeout(10); right after Serial.begin() or as @Sami suggested, you can use Serial.readStringUntil("xxx") where 'xxx' is the end of the string that you send fx. '\n' or '\r\n' if you terminate the string with a linebreak.
+
+That's a one-time thing. You should put this in a while loop.
+
+Also, it looks like your using a VM to test the code so try using it with a real device.
+
+
+QUESTION:
+I'am creating a project for which I get data from an force sensing resistor into my Arduino. Now I want to send the data from the force sensing resistor to my server trough an ajaxcall. How do I peform an ajaxcall with my arduino? 
+The arduino I use is a: Arduino Uno Wifi Developer Edition
+ANSWERS:
+Arduino #2 should keep its TX line HIGH while it's busy and wants to delay the reset.
+
+It looks like the line "cout << bytes_read << endl;" should instead be something like "cout << read_buffer << endl;"
+
+I have solved this issue, Problem is when bluetooth connection is lost, then how you send notification ? So, solution is your android phone ping to bluetooth device everything 10 seconds or 5 seconds, bluetooth device will receive this ping and send response back to your android phone. if your phone gets response, then its working, if your phone does not get response. then you should show user that device is disconnected. 
+
+
+QUESTION:
+I am trying to make Arduino and Java communicate with each other. I am using Eclipse. What my goal is to use the ArrayList I made in Java and have it sent to Arduino for it to use. I have been trying for days and can't seem to get this simple task to work. I want to be able to have the Java's ArrayList I created and have it sent to Arduino so then I can use the values of the ArrayList to make the Servo move a certain way. Here is what I have so far Arduino:
+I want to use this Java code and have it communicate with Arduino so I can use real data:
+ANSWERS:
+Wouldn't hurt to check i after incrementing, too.
+
+For things like this first thing you do, read the data sheet of your LED and see how much current they draw. If you got like 100 LED and each draw 20 mA, that would be 2 Amps and not only Arduino can not supply it, you are risking burning your Arduino. After you figured out how much current your system needs, you gotta use a power source that can handle it. You got several options, for example a BJT is a current amplifier but it complicates the design and needs some background in electrical engineering. The other option would be using external power sources such as batteries or wall plugs. Then, you just need to buy a good adapter or voltage regulator that can handle your current need. Also, in that case you will need some sort of relay to control the leds with your Arduino. What Relay does is that it lets you turn it on and off with micro controller logic, but when it is on it uses an external power source.
+
+When you do this, you have to make sure that Arduino 2 sets its TX pin to LOW first, before playing with the LEDs. Only when it is finished, will should it set its TX pin to HIGH.
+
+
+QUESTION:
+I am trying to get some int type data sending from Arduino Uno to Ubuntu. I have some encoder readings proceeded in Arduino. When I turn the encoder clockwise, numbers are like this:
+and when I turn the encoder counter-clockwise I get negative values similar as above. My purpose is sending these values to Ubuntu using C++ and ROS. When I run the C++ code on Ubuntu, I get these values like this:
+I don't know what is wrong?
+Arduino code:
+C++ code:
+ANSWERS:
+To illustrate, I'll use a much simpler game.  Press the start button to make one LED blink until the stop button is pressed.
+
+Once you have your code organized as a state machine, it's relatively easy to respond to any input at any time.
+
+When you use Serial.readString() it tries to read until it gets a timeout.
+The default timeout on serial is 1 sec. That means that after the last character has been read, it waits 1 sec. more before it finishes. You can set the timeout value manually in the setup by using Serial.setTimeout(10); right after Serial.begin() or as @Sami suggested, you can use Serial.readStringUntil("xxx") where 'xxx' is the end of the string that you send fx. '\n' or '\r\n' if you terminate the string with a linebreak.
+
