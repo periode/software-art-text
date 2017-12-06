@@ -1,4 +1,7 @@
 # ====| OUT/LOUD - Flask Server |====
+
+# TODO: HOW TO OSC IF IP ISN'T LOCALHHOST??????
+
 from flask import Flask, render_template, request, url_for, jsonify, redirect
 import random
 import time
@@ -33,35 +36,6 @@ def sendMult(add, *msg):
     message = message.build()
     client.send(message)
 
-def send(*msg):
-    #bundle = osc_bundle_builder.OscBundleBuilder(osc_bundle_builder.IMMEDIATELY)
-    #message = osc_message_builder.OscMessageBuilder(address='/test')
-
-    #message.add_arg(len(msg))
-
-    #for elem in msg:
-
-
-    client.send_message("/test", msg.encode())
-    print("send")
-    #global sock
-    #message = msg
-    #sock.sendto(message.encode('utf-8'), (ip3, port))
-    #print('Sending', message, "to port", port)
-    #.encode('utf-8')
-
-
-#voices = speech.getProperty('voices')
-
-#voice_robot = random.choice(voices).id
-#voice_phone = random.choice(voices).id
-
-#while voice_robot == voice_phone:
-#    voice_phone = random.chocie(voices).id
-
-#print(voice_robot, voice_phone, file=sys.stderr, flush=True)
-#print("what the fuck")
-
 state = 'a'
 
 content = {
@@ -79,7 +53,8 @@ content = {
                 'count' : 0,
                 'list' : []
                 }
-            }
+            },
+        'period': 90
         },
     'b': {
         'robot': [],
@@ -95,7 +70,8 @@ content = {
                 'count' : 0,
                 'list' : []
                 }
-            }
+            },
+        'period': 90
         },
     'c': {
         'robot': [],
@@ -111,7 +87,8 @@ content = {
                 'count' : 0,
                 'list' : []
                 }
-            }
+            },
+        'period': 90
         },
     'd': {
         'robot': [],
@@ -127,25 +104,8 @@ content = {
         }
     }
 
-wordsA = ['bomb', 'awesome', 'robot', 'dynamic', 'look', 'tech']
-wordsB = ['flower', 'rabbit', 'bunny', 'magic', 'nature', 'sunshine']
-
-wordsC = ['TEST', 'IS', 'SUCCESSFUL']
-wordsD = ['THIS', 'WAS A', 'TRIUMPH']
-
 timestamp = 0
-period = 30;
-
-testPoll = {
-    '0' : {
-        'count' : 0,
-        'list' : []
-        },
-    '1' : {
-        'count' : 0,
-        'list' : []
-        }
-    }
+period = 90;
 
 @app.route('/')
 def root():
@@ -157,69 +117,103 @@ def poll():
     global period
     global state
 
-    if request.method == 'POST':
-        form = request.form
-        choice = form['choice']
-        word = form['word']
-        print(word, choice)
+    try:
+        if request.method == 'POST':
+            form = request.form
+            choice = form['choice']
+            word = form['word']
+            print(word, choice)
 
-        content[state]['poll'][choice]['count'] += 1
-        lst = content[state]['poll'][choice]['list']
-        lst.append(word)
+            content[state]['poll'][choice]['count'] += 1
+            lst = content[state]['poll'][choice]['list']
+            lst.append(word)
 
-        keys = []
-        p = content[state]['poll']
-        for key in p:
-            keys.append(key)
-
-        index = -1;
-        if keys[0] == choice:
-            index = 0
-        elif keys[1] == choice:
-            index = 1
-
-        sendMult('/text', index, word)
-
-        if time.clock() >= timestamp + period:
-            reset()
+            keys = []
             p = content[state]['poll']
-
             for key in p:
                 keys.append(key)
 
-            if p[keys[0]]['count'] > p[keys[1]]['count']:
-                state = keys[0]
-            else:
-                state = keys[1]
-            timestamp = time.clock()
-        
-        keys = []
-        p = content[state]['poll']
-        for key in p:
-            keys.append(key)
-        
-        n1 = p[keys[0]]['count']
-        n2 = p[keys[1]]['count']
-        print(n1, ':', n2)
+            index = -1;
+            if keys[0] == choice:
+                index = 0
+            elif keys[1] == choice:
+                index = 1
 
-    res = [] #[random.choice(wordsA), random.choice(wordsB)]
+            sendMult('/text', index, word)
+
+            if time.clock() >= timestamp + period:
+                reset()
+                p = content[state]['poll']
+
+                for key in p:
+                    keys.append(key)
+
+                if p[keys[0]]['count'] > p[keys[1]]['count']:
+                    state = keys[0]
+                else:
+                    state = keys[1]
+                timestamp = time.clock()
+        
+            keys = []
+            p = content[state]['poll']
+            for key in p:
+                keys.append(key)
+        
+            n1 = p[keys[0]]['count']
+            n2 = p[keys[1]]['count']
+            print(n1, ':', n2)
+
+
+        res = []
     
-    pollObj = content[state]['poll']
-    for item in pollObj:
-        text = pollObj[item]['options']
-        vol = (time.clock()-timestamp)/period
-        if vol > 1:
-            vol = 1.0
-        res.append({
-            'key': item,
-            'text': random.choice(text),
-            'volume': vol
-            })
+        pollObj = content[state]['poll']
+        for item in pollObj:
+            text = pollObj[item]['options']
+            vol = (time.clock()-timestamp)/period
+            if vol > 1:
+                vol = 1.0
+            res.append({
+                'key': item,
+                'text': random.choice(text),
+                'volume': vol
+                })
 
-    #res.append(random.choice(wordsA))
-    #res.append(random.choice(wordsB))
+        return jsonify(res)
+    except KeyError:
+        res = [{
+            'key': '0',
+            'text': 'Thank You',
+            'volume': 0
+            },{
+            'key': '0',
+            'text': 'Robot Has Decided',
+            'volume': 0
+            }]
+        return jsonify(res)
 
-    return jsonify(res)
+@app.route('/api/override/', methods=['GET', 'POST'])
+def override():
+    global timestamp
+    global period
+    global state
+
+    if request.method == 'POST':
+        reset()
+        ovr = int(request.form['override'])
+        print(ovr)
+
+        states = ['a', 'b', 'c', 'd', 'e', 'f']
+        if ovr < 6:
+            state = states[ovr]
+        else:
+            print('RING RING')
+
+    jsUrl = url_for('static', filename='override.js')
+    cssUrl = url_for('static', filename='style.css')
+    oCssUrl = url_for('static', filename = 'override.css')
+    saUrl = url_for('static', filename = 'superagent.js')
+
+    return render_template("override.html", js=jsUrl, css = cssUrl, sa = saUrl, oCss = oCssUrl)
 
 @app.route('/api/reset')
 def resetRoute():
@@ -232,16 +226,14 @@ def four_oh_four(err):
 
 def reset():
     timestamp = time.clock()
+    sendMult('/reset', 1)
     
-    for key in testPoll:
-        element = testPoll[key]
-        element['count'] = 0
-        element['list'] = []
-
-#print("stupid snek")   
-#speech = pyttsx.init()
-
-sendMult('/test', 'fak', 'dis', 3)
-
-#if __name__ == '__main__':
-#    app.run(host='10.225.87.183', port=5000)
+    for key in content:
+        try:
+            pollThing = content[key]['poll']
+            for option in pollThing:
+                thing = pollThing[option]
+                thing['count'] = 0
+                thing['list'] = []
+        except KeyError:
+            continue
