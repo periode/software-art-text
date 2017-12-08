@@ -1,3 +1,5 @@
+# code writen by allison parrish - http://decontextualize.com
+
 import random
 
 def build_model(tokens, n):
@@ -19,7 +21,7 @@ def build_model(tokens, n):
 		model[final_gram] = [None]
 	return model
 
-def generate(model, n, seed=None, max_iterations=500):
+def generate(model, n, seed, max_iterations):
 	"""Generates a list of tokens from information in model, using n as the
 		length of n-grams in the model. Starts the generation with the n-gram
 		given as seed. If more than max_iteration iterations are reached, the

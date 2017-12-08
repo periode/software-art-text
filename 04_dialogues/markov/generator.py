@@ -1,6 +1,8 @@
 import markov
 
-text = open("./emma.txt").read()
-model = markov.build_model(text, 8)
+ngram = 3
 
-print ''.join(markov.generate(model, 8))
+text = open("./prince.txt").read()
+model = markov.build_model(text, ngram)
+
+print ''.join(markov.generate(model, ngram, None, 500))
