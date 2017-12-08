@@ -1,1 +1,4 @@
 .DS_Store
+venv*
+notes/
+of_libs

@@ -2,6 +2,7 @@ from textblob import TextBlob
 from textblob.wordnet import ADJ
 
 from wordnik import *
+import markov
 
 import random
 import re
@@ -14,6 +15,9 @@ mode = ''
 input = ''
 output = ''
 relative = False
+nGram = 10
+seed = None
+mMax = 500
 
 api_url = 'http://api.wordnik.com/v4'
 api_key = 'a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5'
@@ -21,7 +25,7 @@ client = swagger.ApiClient(api_key, api_url)
 
 # Take input
 try:
-    opts, args = getopt.getopt(sys.argv[1:], "srglhi:o:")
+    opts, args = getopt.getopt(sys.argv[1:], "srgmlhi:o:n:", ['seed=', 'max='])
 except getopt.GetoptError:
     print("Wrong option!")
     sys.exit()
@@ -33,20 +37,32 @@ for opt, arg in opts:
         mode = 'rand'
     elif opt == '-g':
         mode = 'gram'
+    elif opt == '-m':
+        mode = 'mark'
     elif opt == '-l':
         relative = True
+    elif opt == '--seed':
+        seed = arg
+    elif opt == '--max':
+        mMax = int(arg)
     elif opt == '-i':
         input = arg
     elif opt == '-o':
         output = arg
+    elif opt == '-n':
+        nGram = int(arg)
     elif opt == '-h':
         print('''HELP
-        -s       : Synonym replacement mode
-        -r       : Random replacement mode
-        -g       : Grammar generation mode
-        -l       : Enable relative sampling for grammar mode
-        -i [arg] : Path to input text file
-        -o [arg] : Path to output text file''')
+        -s           : Synonym replacement mode
+        -r           : Random replacement mode
+        -g           : Grammar generation mode
+        -m           : Markov chain mode
+        -l           : Enable relative sampling for grammar mode
+        --seed [arg] : Markov chain seed
+        --max [arg]  : Markov chain max length
+        -n [arg]     : Set n-gram number for Markov chain mode
+        -i [arg]     : Path to input text file
+        -o [arg]     : Path to output text file''')
         sys.exit()
 
 if mode == '' or input == '' or output == '':
@@ -225,6 +241,16 @@ def gramGenerate(iFile, oFile):
     oText = " ".join(makeSentence(grammar, "STZ"))
     oFile.write(oText)
 
+def makeMarkov(iFile, oFile):
+    iText = iFile.read();
+
+    print("Building model...")
+    model = markov.build_model(iText, nGram);
+    print("Assembling output...")
+    oText = ''.join(markov.generate(model, nGram, seed, mMax))
+
+    oFile.write(oText)
+
 # Open files and run appropriate function based on options given
 with open(input, "r") as inp, open(output, "w") as out:
     print("Input:", input)
@@ -238,5 +264,8 @@ with open(input, "r") as inp, open(output, "w") as out:
     elif mode == 'gram':
         print("\n==== CONTEXT-FREE GRAMMAR ====\n")
         gramGenerate(inp, out)
+    elif mode == 'mark':
+        print("\n==== MARKOV CHAIN ====\n")
+        makeMarkov(inp, out)
 
 print("All done! :D")

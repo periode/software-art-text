@@ -4,20 +4,22 @@
 }
 
 button {
+    font-family: "Geo", sans-serif;
+
     width: 80%;
     height: 150px;
 
-    font-size: 42px;
+    font-size: 52px;
     font-weight: 500;
 
     background-color: white;
     border: solid 8px black;
-    margin-top: 25px;
-    margin-bottom: 25px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 button:hover {
-    background-color: gray;
+    /*background-color: gray;*/
 }
 
 .root {
@@ -33,13 +35,11 @@ button:hover {
 
 .flex-cont {
     height: 100%;
-    width: 80%;
+    width: 100%;
 
     display: flex;
     align-content: center;
     justify-content: center;
 
     flex-wrap: wrap;
-
-    /*background-color: blue;*/
 }

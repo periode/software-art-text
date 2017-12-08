@@ -1,0 +1,141 @@
+
+QUESTION:
+I want a polar plot, but with a reduced number of radial (r dimension) ticks.  I already tried the suggested solutions from other questions, such as
+but it did not seem to change anything.
+I tried using pyplot.gca().set_rticks([...]) but that requires to know the ticks in advance, while I am interested in just setting the maximum number of them.
+What else could I try in order to reduce the number of ticks (or circles)?
+ANSWERS:
+signal_a=(3=box1:soc1.sig_a1|box1:soc1.sig_a0;2=box2:band_x1;1=xbox:abis|xbox1:bbs.seg_b;0=trip:skip);signal_b=super:mario|repp:ver;signal_c=semi:six_sig;signal_d=(1=last:end|start:twist;0=demo:test)
+
+You probably don't want to do that, what you likely need is to use a collection data structure to hold your objects and allow you to retrieve them:
+
+I want to make program run again when comparing finished. and run again 
+
+
+QUESTION:
+I need a numpy array with 3-rows and 1 Column (for pyCGNS when creating a Zone).
+And This Must be true when asking if it is NPY.isfortran(X).
+I tried several ways, but none worked.
+e.g.
+ANSWERS:
+Output:
+
+A side-effect is that predict_proba returns probabilities which are far away from the actual probabilities. (If you want to understand why, plot the simple average chance and the distribution of predicted scores without and with different class_weight=. How do the predicted scores shift?). Depending on your final use-case (classification, ranking, probability estimation) you should consider the choices in your model. 
+
+This function is obsolete and, because of changes due to relaxed stride checking, its return value for the same array may differ for versions of NumPy >= 1.10.0 and previous versions. If you only want to check if an array is Fortran contiguous use a.flags.f_contiguous instead. 
+
+
+QUESTION:
+Below is an example of part of my dataframe: 
+I need for every unique value in column col1 to count number of non empty cells between empty cells. I tried to use groupby() for grouping unique values in col1 and count() to count values, but it count all non empty values for unique values in col1.
+Here is my code:
+The result looks like this:
+But I need to get the following:
+I would be grateful for any advice!
+ANSWERS:
+As it was already answered you should use ;(?=signal).
+
+Output:
+
+Not only do you need to delete everything on the canvas, but you also need to cancel the order to update the screen. The following version of your program should work properly. Please note the changes.
+
+
+QUESTION:
+Below is my code:
+But when I run the same, I get the below output:
+According to the above logic, my understanding is that the loop will iterate for 99 times because of the range given, and if the remainder is zero for "i", then it should be appended on the list. Not sure where and why my logic is wrong.
+ANSWERS:
+The class_weightoption does nothing more than increasing the weight of making an error with the under-represented class. In other words, misclassifying the rare class is punished harsher. 
+
+Please note that this ignores ties, it just goes with the value returned by argmax.
+
+Not only do you need to delete everything on the canvas, but you also need to cancel the order to update the screen. The following version of your program should work properly. Please note the changes.
+
+
+QUESTION:
+THE LINES IN THE FILES WILL TOP TO BOTTOM (ONE UNDER THE OTHER)
+I have 2 ".txt" file like this :
+second one is like that:
+I will compare this texts line by line but the problem is when I write 
+"python john.txt jack.txt " on command line  sys.arg[1] and sys.argv[2]
+will provide the lines and compare them . so sys.argv[1] must provide lines in file one by one but I will write"python john.txt jack.txt " only one time.
+sample output:
+I say again. the sys.argv[1] and sys.argv[2] will provide file line by line and when the comparison ends. they will take next lines in files how can I do it ? 
+I think it would done by using while loops but how ? 
+ANSWERS:
+This is the gist of how to get an integer from the command line. It works using a while loop and try/except statements. You can add the checks for the integer range. You can use this code to create a function, which can be called twice for your particular problem. 
+
+Check is the number is not a number, if it fails check if its remaider by 2 is 0 if true it is an integer
+
+But this can lead to several ones in a row.
+
+
+QUESTION:
+Below is my code:
+But when I run the same, I get the below output:
+According to the above logic, my understanding is that the loop will iterate for 99 times because of the range given, and if the remainder is zero for "i", then it should be appended on the list. Not sure where and why my logic is wrong.
+ANSWERS:
+Method #1
+
+You cannot open two files at the same time and work on them at the same time, so I think csv.reader is a possible option. First write the lines from john.txt to a list, and then compare:
+
+I don't think there is a fast solution to your question, as string operations will always be slow-ish. Still, there is a better/faster one. 
+
+
+QUESTION:
+I am using Python 3.6 currently and my code currently is asking a user to input 2 integers and convert them into binary form, this is not a problem, the issue that I have is when it asks the user to input a number, if they put anything other than an integer, it will break the code and come up with an error, is there a specific few lines of code that will ensure that errors will not display if letters or floats are inputted?
+I have tried one method which was:
+However I still get errors when testing the code.       
+I would like the code to detect that a string or float has been inputted, then reload the "def" function without giving a syntax error.
+This is the print result:
+
+ANSWERS:
+Please note that this ignores ties, it just goes with the value returned by argmax.
+
+True if the array is Fortran contiguous BUT not C contiguous.
+
+So your code becomes:
+
+
+QUESTION:
+This question already has an answer here:
+I want as many variables with "default string" as the value of A
+how do I do this?
+edit
+say all variables are created Variable1, variable2 .... and i want
+  to change all of them to a different string how would i do that?
+ANSWERS:
+You probably don't want to do that, what you likely need is to use a collection data structure to hold your objects and allow you to retrieve them:
+
+signal_a=(3=box1:soc1.sig_a1|box1:soc1.sig_a0;2=box2:band_x1;1=xbox:abis|xbox1:bbs.seg_b;0=trip:skip);signal_b=super:mario|repp:ver;signal_c=semi:six_sig;signal_d=(1=last:end|start:twist;0=demo:test)
+
+Not only do you need to delete everything on the canvas, but you also need to cancel the order to update the screen. The following version of your program should work properly. Please note the changes.
+
+
+QUESTION:
+I need a numpy array with 3-rows and 1 Column (for pyCGNS when creating a Zone).
+And This Must be true when asking if it is NPY.isfortran(X).
+I tried several ways, but none worked.
+e.g.
+ANSWERS:
+Output: 
+
+The class_weightoption does nothing more than increasing the weight of making an error with the under-represented class. In other words, misclassifying the rare class is punished harsher. 
+
+Create an identity matrix and select from its rows using argmax on your array:
+
+
+QUESTION:
+I am using Python 3.6 currently and my code currently is asking a user to input 2 integers and convert them into binary form, this is not a problem, the issue that I have is when it asks the user to input a number, if they put anything other than an integer, it will break the code and come up with an error, is there a specific few lines of code that will ensure that errors will not display if letters or floats are inputted?
+I have tried one method which was:
+However I still get errors when testing the code.       
+I would like the code to detect that a string or float has been inputted, then reload the "def" function without giving a syntax error.
+This is the print result:
+
+ANSWERS:
+You probably don't want to do that, what you likely need is to use a collection data structure to hold your objects and allow you to retrieve them:
+
+Your callback is already getting the args. Look at this demo:
+
+Note: This uses NumPy broadcasting when doing the comparison between a and maxx
+

@@ -1,0 +1,152 @@
+
+QUESTION:
+I'm a student in 2 year electrical and computer science : i am not familiar with android studio (most of the time i work on C++).
+I made a joystick on processing for an android project, and then I exported my processing sketch to android studio, now I have to find a way to recover data (vector position) from my processing sketch to my main activity.
+BUT here is the problem:
+so what did i try :
+My thought are that there is a problem with this line -> 
+I made some screenshots:
+Here the Main Activity :
+Here the view of the main activity
+
+ANSWERS:
+this sets the background with an opacity... it will work. trust me
+
+Questions like this are best answered by looking at the Processing reference. There's an Image section that lists a loadImage() function for loading an image file, and an image() function for drawing it. Please read those.
+
+just change your buttonState variable type from integer to boolean, and then use 
+
+#=== 31 sec
+QUESTION:
+I have a rectangle which moves from bottom to top and repeats itself. Like so,
+I want to have the effect which happens when any obstacles moves at a fast speed like leaving a trail for a second.
+How can I achieve this?
+ANSWERS:
+apply this step that would help you to create your onClick() listener method.
+
+Keep it simple! just use processing + arduino with standard firmdata:
+https://playground.arduino.cc/Interfacing/Processing
+So you can read the pin state in the processing code, don´t need serial communication.
+
+just change your buttonState variable type from integer to boolean, and then use 
+
+
+QUESTION:
+So the idea here is that I'm taking a .csv into a string and each value needs to be stored into a variable. I am unsure how to properly parse a string to do this.
+My idea is a function that looks like
+so if I passed it something like
+it would return 45
+and if I passed it
+it would return 621
+I'm not sure if I have that setup properly to be recursive, but I could also use a For loop I suppose, only real stipulation is I can't use the Substring method.
+ANSWERS:
+isn`t working because first error.
+
+So when you use write HIGH and LOW in Serial.write, it will be send as a series of bytes. Edit your processing part to handle the incoming bytes. Just as follows :
+
+Did you see my comment on the answer you linked to?
+
+
+QUESTION:
+So the idea here is that I'm taking a .csv into a string and each value needs to be stored into a variable. I am unsure how to properly parse a string to do this.
+My idea is a function that looks like
+so if I passed it something like
+it would return 45
+and if I passed it
+it would return 621
+I'm not sure if I have that setup properly to be recursive, but I could also use a For loop I suppose, only real stipulation is I can't use the Substring method.
+ANSWERS:
+It's hard to help with general "how do I do this" type questions. Stack Overflow is designed for more specific "I tried X, expected Y, but got Z instead" type questions. But I'll try to help in a general sense.
+
+You'll have to play with it a little bit to get the effect you're going for, but the basic idea is the same: just use an array to hold previous positions, and then draw them to create your trail.
+
+Keep it simple! just use processing + arduino with standard firmdata:
+https://playground.arduino.cc/Interfacing/Processing
+So you can read the pin state in the processing code, don´t need serial communication.
+
+#=== 24 s  (1 answer)
+QUESTION:
+I am trying to use a button switch in Arduino to trigger a visual display in Processing. I used "HIGH" and "LOW" to identify whether the button is pressed.
+However, my code is constantly giving null instead of giving "HIGH" or "LOW" depending on the button state. I think this is pretty basic but I'm just quite lost. Any helps or comments would be appreciated!
+Below is my code for Arduino and Processing respectively.
+Processing code: 
+ANSWERS:
+Like everything in programming, there are multiple ways to do that.
+
+From the reference:
+
+isn`t working because first error.
+
+
+QUESTION:
+So, I have an array of Strings that I have display to the screen one at a time through the text() function. But when I add to the index the previous array element stays on-screen and I can't figure out how to remove it. I just want to scroll through the text on screen and essentially have the next array element replace it on the screen.
+ANSWERS:
+For example, instead of starting with your whole program that shows multiple circles, why not start with a simpler example program that just shows a single circle? Try to get a pattern to display inside of that.
+
+A complete example of 10 rows/columns with ellipses.
+
+First off, your syntax is not valid. You're missing curly brackets, and you've got an if statement outside of a function, which is not valid. Please try to post a MCVE with valid syntax instead of a disconnected snippet of code.
+
+
+QUESTION:
+I've the below code snippet in Processing 3.3.6:
+menuBarButtons.add(new TextButton("File", 0, 0, 20, menuBarHeight, (() -> println("Test")) ));
+However, processing gives the error
+Lambda expressions are allowed only at source level 1.8 or above
+This is quite easy to fix in any normal java IDE by changing the JRE in the build path/run configuration, but I can't find any option for this in the settings. I tried copy pasting a more up to date JRE into the processing folder, but to no avail.
+ANSWERS:
+Check out serialEvent() and try...catch
+
+public interface ClintInteface {
+                        void onclick(); 
+ } 
+
+str: a string to send as a series of bytes 
+
+
+QUESTION:
+Does anyone know why my index matrix[k][m]=sum/9 is out of range? I'm pretty sure that my solution is correct. I tried debugging it, but I still cannot think 
+why it's not working.
+The image is presented as a matrix (list of lists).
+Let's say I took this list,
+it should return a list with 18.
+Another example of it to understand it better:
+
+ANSWERS:
+Your code seems to work for me as expected.
+You could try loading the font from a file instead (download the font) and put in your sketch data folder. Hope that helps.
+
+Your code seems to work for me as expected.
+You could try loading the font from a file instead (download the font) and put in your sketch data folder. Hope that helps.
+
+Should solve the problem you have. For more help about arrayCopy look here: https://processing.org/reference/arrayCopy_.html
+
+
+QUESTION:
+Does anyone know why my index matrix[k][m]=sum/9 is out of range? I'm pretty sure that my solution is correct. I tried debugging it, but I still cannot think 
+why it's not working.
+The image is presented as a matrix (list of lists).
+Let's say I took this list,
+it should return a list with 18.
+Another example of it to understand it better:
+
+ANSWERS:
+Either use background(); with the color you want as the background color as argument. For example, background(0,0,100); is blue background. This will clear your screen at the beginning of each draw() loop. But if you don't want to clear everything from screen everytime your program loop through draw(), just use a rect() same color as your background and on top of your text so that it cover your privious text. 
+
+I believe as  @Hovercraft has mentioned you just need this code in a file called ScannerDemo.java, Were guessing you have it in different file name.
+
+Processing comes with a split() function that does exactly what you're describing. 
+
+
+QUESTION:
+I'm trying to create a solar system using processing but I'm stuck at trying to set an image instead of using the java standard elipse image.
+I started this at school and it consisted of an ellipse rotating around another ellipse.
+Planets class
+I created two images on paint that are the earth and the sun but I don't know how to set the image up.
+ANSWERS:
+If I were you, I'd rethink my design. I don't really see the reason to have a separate EnemyDatabase class at all. Maybe just create a function that adds X random enemies to the level, where X is a parameter? That's up to you, but your fundamental problem here is that you only have a single instance of Enemy.
+
+You can get interesting effects by replacing background(0) in draw by a full-window rectangle which is partially transparent. For example:
+
+By executing Serial.write(HIGH); and Serial.write(LOW); you are just sending a single byte 1 or 0.
+

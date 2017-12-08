@@ -1,0 +1,162 @@
+
+QUESTION:
+long time reader,
+I was wondering if anyone could help me make my code a bit simpler by using a template to return different classes derived from the same base. So I can call the functions on the classes instead of rewriting the function for each object call in a manager class. Here an example of one my current function calls:
+I want to create a template function that returns these classes like so:
+So the first function will become:
+ANSWERS:
+Or get the window process GetWindowThreadProcessId() and check whether it's an instance of your app. See How to get the process name in C++
+
+If the only thing you want is to just print a line of text you can use std::cout that prints to basic output onto your console window when the application runs. This is the most basic and easiest way to solve this.
+
+Here you can find the whole explanation Android Rotation Exploitation, the source code and the video. I hope this helps
+
+
+QUESTION:
+I'm new to both openFrameworks and this compiler called Emscripten.
+After struggling for a few days, I was able to compile my openFrameworks/C++ code into js but Emscripten gives me an html file with a lot of junk included (For example, there is a header and footer -
+ http://openframeworks.cc/setup/emscripten/)
+I'm trying to host the video/animation itself like it is on this page (http://www.syedrezaali.com/#/great-scott/) but I have no idea how to go about it. Can anyone help me out?
+Thank you
+ANSWERS:
+It is currently drawing with the previous ofSetColor(...);.
+
+Goddam you, preprocessors!
+
+Edit: I've just realized that by line you probably didn't mean a line of text... 
+
+
+QUESTION:
+I'm trying to run ofxPd example on Android devices using Android Studio on OSX.
+First of all, I could successfully compile and run of_v0.9.8_android_release/examples/android/androidEmptyExample on Android Studio.
+But I wasn't sure how to properly add ofxPd addon on top of the androidEmptyExample.
+So I just tried locating ofxPd folder into androidEmptyExample/src but when I build it, It fails with the errors as you can see in the screenshot below.
+
+I thought it has to do with C Flags so I added them on androidEmptyExample/jni/Android.mk file but it doesn't seem to have any effect.
+How can I properly add C Flags on Android Studio?
+Many thanks!
+UPDATE : I removed ofxPd folder in of_v0.9.8_android_release/examples/android/androidEmptyExample and I added 'ofxPd' at the end of androidEmptyExample/addons.make file instead.
+When I build it, now it always gets stuck in the middle of the build.
+
+It gets stuck while compiling one of C files in ofxPd/libs/libpd/pure-data/src folder.
+I tried this many times but it never progressed further once it gets stuck.
+(Once I've waited for over 40 minutes but no progress at all)
+The result was the same regardless of the C Flags.
+I would appreciate any suggestion. Thanks!
+ANSWERS:
+There is a discussion of your specific problem here here as well https://github.com/openframeworks/openFrameworks/issues/5456
+
+The usual solution to this problem is classical inheritance:
+
+Edit: I've just realized that by line you probably didn't mean a line of text... 
+
+
+QUESTION:
+I'm tracking an object which I expect to move at a maximum speed of 10m/s using its colour.  
+I'm having a hard time finding a camera which will work at around 200fps. I'll be using a very low resolution (640x360) for faster processing. Can someone point me in the right direction?
+Edit: This is the only one I've found so far and I'm not convinced it supports live streaming. Sony Action Cam AS100V (H.264 - 800 x 480 - 240 fps) - https://www.cnet.com/products/sony-action-cam-as100v/specs/
+ANSWERS:
+However, quickly going through the CVDrone project, and it's samples, it should be possible to integrate the project into an OpenFrameworks projects. I recommend trying ofxCV to use OpenCV directly. You will need to swap the OpenCV 2 for the OpenCV 3 libraries (headers/dlls) though and of course the ardrone classes to your project.
+
+Did you try:
+
+Having said that, you could consider Basler industrial cameras. Namely, take a look at their ace series which include cameras with crazy framerates like 203 fps, 376 fps, 511 fps, and even 751 fps. Note the interfaces they use (USB 3.0, GigE, Camera Link). You will also need to buy lens for them separately. There is a tool on their website to select the right focal length of lenses based on camera and shooting distance.
+
+
+QUESTION:
+I'm tracking an object which I expect to move at a maximum speed of 10m/s using its colour.  
+I'm having a hard time finding a camera which will work at around 200fps. I'll be using a very low resolution (640x360) for faster processing. Can someone point me in the right direction?
+Edit: This is the only one I've found so far and I'm not convinced it supports live streaming. Sony Action Cam AS100V (H.264 - 800 x 480 - 240 fps) - https://www.cnet.com/products/sony-action-cam-as100v/specs/
+ANSWERS:
+Y axis is flipped in images. Means (0, 0) is the top left corner, and (0, max) is the bottom left corner
+
+e.g.
+
+If the only thing you want is to just print a line of text you can use std::cout that prints to basic output onto your console window when the application runs. This is the most basic and easiest way to solve this.
+
+#=== 27 sec
+QUESTION:
+I would like to configure OpenFramework IDE in my codeblock. I want to build an app which prints the line on screen.
+ANSWERS:
+It is currently drawing with the previous ofSetColor(...);.
+
+The usual solution to this problem is classical inheritance:
+
+This is a known issue with openFrameworks and Android studio. There is a pull request in the queue https://github.com/openframeworks/openFrameworks/pull/5461 that should solve this problem.  Please try it out.
+
+
+QUESTION:
+I'm using OpenCV with a very high kernel (50 and higher) to get a very exaggerated blur effect. 
+I am getting these weird line/area like effects on the generated imagery. Please refer to the wall area on the image below.  
+Is this something that is inherent to blurring at a very high kernel size? 
+What would be some techniques to smooth out and eliminate this effect? 
+I am using OpenFrameworks with the ofxCV addon. The relevant part of my code is just
+If you are not familiar ofxCV is essentially a bridge and maps back to this OpenCV call in the end. 
+
+ANSWERS:
+This is a known issue with openFrameworks and Android studio. There is a pull request in the queue https://github.com/openframeworks/openFrameworks/pull/5461 that should solve this problem.  Please try it out.
+
+This is more of a hardware problem, and, probably, it is somewhat misfit to StackOverflow (meaning that you could probably get more answers somewhere like Photography SE). Unfortunately, you didn't mention your requirements for tracking accuracy, the scale of the scene and so on, so it is hard to suggest an algorithmic workaround (e.g. usage of a low-fps camera and interpolating the object's location between the frame gaps).
+
+Once you do, you can import any existing project.
+
+
+QUESTION:
+I'm trying to run ofxPd example on Android devices using Android Studio on OSX.
+First of all, I could successfully compile and run of_v0.9.8_android_release/examples/android/androidEmptyExample on Android Studio.
+But I wasn't sure how to properly add ofxPd addon on top of the androidEmptyExample.
+So I just tried locating ofxPd folder into androidEmptyExample/src but when I build it, It fails with the errors as you can see in the screenshot below.
+
+I thought it has to do with C Flags so I added them on androidEmptyExample/jni/Android.mk file but it doesn't seem to have any effect.
+How can I properly add C Flags on Android Studio?
+Many thanks!
+UPDATE : I removed ofxPd folder in of_v0.9.8_android_release/examples/android/androidEmptyExample and I added 'ofxPd' at the end of androidEmptyExample/addons.make file instead.
+When I build it, now it always gets stuck in the middle of the build.
+
+It gets stuck while compiling one of C files in ofxPd/libs/libpd/pure-data/src folder.
+I tried this many times but it never progressed further once it gets stuck.
+(Once I've waited for over 40 minutes but no progress at all)
+The result was the same regardless of the C Flags.
+I would appreciate any suggestion. Thanks!
+ANSWERS:
+The usual solution to this problem is classical inheritance:
+
+You don't need templates for this. You can achieve this by making a base (abstract) class that has defines a (pure) virtual setLoopImage function.
+
+You don't need templates for this. You can achieve this by making a base (abstract) class that has defines a (pure) virtual setLoopImage function.
+
+
+QUESTION:
+I am trying to do a project in code blocks using openframeworks to create graphs. I have seen some tutorials regarding openframeworks graphics but couldn't able to draw a graph based on user defined input values. Can anyone suggest what are the functions here related to graphs?
+P.S: Is "ofxPlotter" the right function for this? 
+I have used "ofDrawLine" function but it only draws line between two points. I want a function in which user puts values and a graph is built based on multiple lines.
+Furthermore, what is the right link of downloading openFrameworks for code blocks? As I am unable to find any tutorial regarding openFrameworks setup for code blocks.
+ANSWERS:
+However, quickly going through the CVDrone project, and it's samples, it should be possible to integrate the project into an OpenFrameworks projects. I recommend trying ofxCV to use OpenCV directly. You will need to swap the OpenCV 2 for the OpenCV 3 libraries (headers/dlls) though and of course the ardrone classes to your project.
+
+Having said that, you could consider Basler industrial cameras. Namely, take a look at their ace series which include cameras with crazy framerates like 203 fps, 376 fps, 511 fps, and even 751 fps. Note the interfaces they use (USB 3.0, GigE, Camera Link). You will also need to buy lens for them separately. There is a tool on their website to select the right focal length of lenses based on camera and shooting distance.
+
+If you have unique window class name you can try GetClassName() https://msdn.microsoft.com/en-us/library/windows/desktop/ms633582(v=vs.85).aspx
+
+
+QUESTION:
+I'm trying to make the OF window get resized proportionally maintaining the same ratio between width and height of the window.
+For example, if you created a window with 400x300 dimensions and if you stretch the width to 800, then the height will automatically be stretched to 600 even though you only stretched the window horizontally.
+Anyways, in order to implement this feature, I needed to use ofSetWindowShape() inside windowResized() listener.
+I could quickly prototype this on MacOS X and it worked very well.
+Here's the code:
+ofApp.h
+ofApp.cpp
+However, if I run the same code on Ubuntu, the app freezes as soon as I resize the window. It seems ofSetWindowShape() calls windowResized() listener and therefore it goes into an infinite loop.
+(windowResized -> ofSetWindowShape -> windowResized ->
+  ofSetWindowShape....)
+How can I change the code so it can also work on Ubuntu without the problem?
+Any advice or guidance would be greatly appreciated!
+P.S: I would also appreciate if Linux users can confirm the app freezing.
+ANSWERS:
+This is a known issue with openFrameworks and Android studio. There is a pull request in the queue https://github.com/openframeworks/openFrameworks/pull/5461 that should solve this problem.  Please try it out.
+
+You have a couple of options. A hacky option, but pragmatic in terms of time and experience with c++, would be to have two programs, a CVDrone and an OF one, talking to each other over sockets on the same computer. OSC makes it easy to pass arguments and not have to worry about parsing data. In terms of streaming frames, you might want to check out spout.
+
+Therefore, if your (0, 0) is at (100, 100), then point (50, 30) would be  at (100 + 50, 100 - 30)
+
